@@ -1,54 +1,6 @@
-/*!
+/*
 Theme Name: divichild
 Text Domain: divichild
 Template:Divi
 */
 
-.et_pb_module.et_pb_text.et_pb_text_3.et_pb_text_align_left.et_pb_bg_layout_light{
-    font-size: 20px;
-    max-height: 440px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background:#e7e8e8; 
-    border-radius: 10px;
-    width: 5px;
-  }
-
-  
-h2{font-size: 46px;
-    font-weight: bold;}
-    
-    h3{font-size: 20px;
-    font-weight: bold;}
-    
-    .et_pb_top_inside_divider {
-        background-image:url(./images/sec3-bg.jpg);
-        background-size: cover;
-        clip-path: polygon(100% 0, 100% 84%, 0 91%, 0 4%);}
-    
-        .et_pb_button_module_wrapper>a {
-            color: #7dcbbd;
-            display: inline-block;
-            border: 2px solid white;
-            background: white;
-            font-weight: bold;
-        }
-    .services-list ul li{
-        margin: 20px 0;font-size: 18px;font-weight: 700;list-style: none;position: relative;
-    }
-    .services-list ul li::before{
-        content: "";
-        width: 12px;height: 12px;background: #7dcbbd;
-        position: absolute;
-        left: -30px;
-        top: 6px;
-        border-radius: 12px;
-    }
-    
