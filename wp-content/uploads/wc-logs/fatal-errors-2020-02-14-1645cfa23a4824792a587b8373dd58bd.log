@@ -1,0 +1,12 @@
+2020-02-14T03:08:04+00:00 CRITICAL Uncaught Error: Call to a member function register() on null in C:\xampp\htdocs\shop\wp-content\plugins\jetpack\class.jetpack.php:5260
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\jetpack\class.jetpack.php(3361): Jetpack::register()
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-setup-wizard.php(2404): Jetpack::try_registration()
+#2 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-setup-wizard.php(326): WC_Admin_Setup_Wizard->wc_setup_activate_save(Object(WC_Admin_Setup_Wizard))
+#3 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Admin_Setup_Wizard->setup_wizard('')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#5 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\shop\wp-admin\admin.php(170): do_action('admin_init')
+#7 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\plugins\jetpack\class.jetpack.php on line 5260
+
