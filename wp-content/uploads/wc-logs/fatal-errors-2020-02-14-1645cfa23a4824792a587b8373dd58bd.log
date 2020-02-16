@@ -10,3 +10,7 @@ Stack trace:
 #7 {main}
   thrown in C:\xampp\htdocs\shop\wp-content\plugins\jetpack\class.jetpack.php on line 5260
 
+2020-02-14T13:10:16+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\wp-db.php on line 2030
+
+2020-02-14T13:10:19+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-content\themes\Divi\includes\builder\module\FullwidthCode.php on line 3
+

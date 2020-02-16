@@ -3,4 +3,66 @@ Theme Name: divichild
 Text Domain: divichild
 Template:Divi
 */
+#logo
+{
+    max-height: 100%;
+}
 
+#top-menu li {
+    display: inline-block;
+    padding-right: 22px;
+    font-size: 20px;
+}
+
+.et_header_style_left #et-top-navigation nav>ul>li>a, .et_header_style_split #et-top-navigation nav>ul>li>a {
+    padding-bottom: 33px;
+    color: #232f3e;
+}
+
+.bottom-nav, .bottom-nav a {
+    font-size: 20px;
+    text-align: center;
+}
+
+#et-footer-nav#footer-info {
+    font-size: 20px;
+    text-align: center;
+}
+
+#et-info-email:before, #et-info-phone:before, #et_search_icon:before, .comment-reply-link:after, .et-cart-info span:before, .et-pb-arrow-next:before, .et-pb-arrow-prev:before, .et-social-icon a:before, .et_audio_container .mejs-playpause-button button:before, .et_audio_container .mejs-volume-button button:before, .et_overlay:before, .et_password_protected_form .et_submit_button:after, .et_pb_button:after, .et_pb_contact_reset:after, .et_pb_contact_submit:after, .et_pb_font_icon:before, .et_pb_newsletter_button:after, .et_pb_pricing_table_button:after, .et_pb_promo_button:after, .et_pb_social_icon a.icon:before, .et_pb_testimonial:before, .et_pb_toggle_title:before, .form-submit .et_pb_button:after, .mobile_menu_bar:before, .woocommerce #content input.button.alt:after, .woocommerce #content input.button:after, .woocommerce #respond input#submit.alt:after, .woocommerce #respond input#submit:after, .woocommerce a.button.alt:after, .woocommerce button.button.alt:after, .woocommerce button.button:after, .woocommerce button.single_add_to_cart_button.button:after, .woocommerce input.button.alt:after, .woocommerce input.button:after, .woocommerce-page #content input.button.alt:after, .woocommerce-page #content input.button:after, .woocommerce-page #respond input#submit.alt:after, .woocommerce-page #respond input#submit:after, .woocommerce-page a.button.alt:after, .woocommerce-page a.button:after, .woocommerce-page button.button.alt:after, .woocommerce-page button.button:after, .woocommerce-page input.button.alt:after, .woocommerce-page input.button:after, a.et_pb_more_button:after {
+    text-shadow: 0 0;
+    font-family: ETmodules!important;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-transform: none;
+    speak: none;
+    font-size: x-large;
+}
+
+#et-footer-nav {
+    background-color: #232f3e;
+}
+
+#footer-bottom {
+    padding: 15px 0 5px;
+    background-color: #232f3e;
+}
+
+.et-db #et-boc .et-l .et_overlay:before, .et_overlay:before
+{
+content: "\e07a";
+text-shadow: 0 0;
+    font-family: ETmodules!important;
+    font-weight: 400;
+    color:#232f3e;
+    font-style: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-transform: none;
+}
