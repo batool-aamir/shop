@@ -1,0 +1,96 @@
+2020-02-17T07:45:21+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T07:49:47+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T07:52:46+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T07:53:19+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T07:53:21+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T07:53:55+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T07:54:05+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T07:54:08+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T08:00:55+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T08:00:57+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T08:01:02+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
+2020-02-17T08:01:12+00:00 CRITICAL Uncaught Error: Call to undefined function get_content() in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php:6
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\template-loader.php(98): include()
+#1 C:\xampp\htdocs\shop\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\shop\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\shop\wp-content\themes\divichild\template\contactus.php on line 6
+
