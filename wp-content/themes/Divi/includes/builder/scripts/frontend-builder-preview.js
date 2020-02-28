@@ -37,11 +37,6 @@
 			data = JSON.parse( data );
 		}
 
-		// Ignore messages not coming from the builder.
-		if (!data || !data.et_pb_preview_nonce) {
-			return;
-		}
-
 		// Loop postMessage data and append it to $form
 		for ( name in data ) {
 			$textarea = $('<textarea />', { name : name, style : "display: none; " }).val( data[name] );

@@ -1,6 +1,68 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'et_builder_enqueue_assets_head' );
-add_action( 'wp_enqueue_scripts', 'et_builder_enqueue_assets_main' );
+
+// Register assets that need to be fired at head
+function et_fb_enqueue_assets_head() {
+	// Setup WP media.
+	// Around 5.2-alpha, `wp_enqueue_media` started using a function defined in a file
+	// which is only included in admin. Unfortunately there's no safe/reliable way to conditionally
+	// load this other than checking the WP version.
+	if ( version_compare( $GLOBALS['wp_version'], '5.2-alpha-44947', '>=' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/post.php' );
+	}
+	wp_enqueue_media();
+
+	// Setup Builder Media Library
+	wp_enqueue_script( 'et_pb_media_library', ET_BUILDER_URI . '/scripts/ext/media-library.js', array( 'media-editor' ), ET_BUILDER_PRODUCT_VERSION, true );
+}
+
+add_action( 'wp_enqueue_scripts', 'et_fb_enqueue_assets_head' );
+
+// TODO, make this fire late enough, so that the_content has fired and ET_Builder_Element::get_computed_vars() is ready
+// currently its being called in temporary_app_boot() in view.php
+// add_action( 'wp_enqueue_scripts', 'et_fb_enqueue_assets' );
+function et_fb_enqueue_main_assets() {
+	$ver    = ET_BUILDER_VERSION;
+	$root   = ET_BUILDER_URI;
+	$assets = ET_FB_ASSETS_URI;
+
+	wp_register_style( 'et_pb_admin_date_css', "{$root}/styles/jquery-ui-1.10.4.custom.css", array(), $ver );
+	wp_register_style( 'et-fb-top-window', "{$assets}/css/fb-top-window.css", array(), $ver );
+
+	$conditional_deps = array();
+
+	if ( ! et_builder_bfb_enabled() ) {
+		$conditional_deps[] = 'et-fb-top-window';
+	}
+
+	// Enqueue the appropriate bundle CSS (hot/start/build)
+	et_fb_enqueue_bundle( 'et-frontend-builder', 'bundle.css', array_merge( array(
+		'et_pb_admin_date_css',
+		'wp-mediaelement',
+		'wp-color-picker',
+		'et-core-admin',
+	), $conditional_deps ) );
+
+	// Load Divi Builder style.css file with hardcore CSS resets and Full Open Sans font if the Divi Builder plugin is active
+	if ( et_is_builder_plugin_active() ) {
+		// `bundle.css` was removed from `divi-builder-style.css` and is now enqueued separately for the DBP as well.
+		wp_enqueue_style(
+			'et-builder-divi-builder-styles',
+			"{$assets}/css/divi-builder-style.css",
+			array_merge( array( 'et-core-admin', 'wp-color-picker' ), $conditional_deps ),
+			$ver
+		);
+	}
+
+	wp_enqueue_script( 'mce-view' );
+
+	if ( ! et_core_use_google_fonts() || et_is_builder_plugin_active() ) {
+		et_fb_enqueue_open_sans();
+	}
+
+	wp_enqueue_style( 'et-frontend-builder-failure-modal', "{$assets}/css/failure_modal.css", array(), $ver );
+	wp_enqueue_style( 'et-frontend-builder-notification-modal', "{$root}/styles/notification_popup_styles.css", array(), $ver );
+}
+add_action( 'wp_enqueue_scripts', 'et_fb_enqueue_main_assets' );
 
 function et_fb_enqueue_google_maps_dependency( $dependencies ) {
 
@@ -31,16 +93,14 @@ function et_fb_get_dynamic_asset( $prefix, $post_type = false, $update = false )
 		$post_type = isset( $post->post_type ) ? $post->post_type : 'post';
 	}
 
-	$post_type = apply_filters( 'et_builder_cache_post_type', $post_type, $prefix );
-
-	$post_type = sanitize_file_name( $post_type );
+	$post_type = sanitize_text_field( $post_type );
 
 	if ( ! in_array( $prefix, array( 'helpers', 'definitions' ) ) ) {
 		$prefix = '';
 	}
 
 	// Per language Cache due to definitions/helpers being localized.
-	$lang   = sanitize_file_name( get_user_locale() );
+	$lang   = get_user_locale();
 	$cache  = sprintf( '%s/%s', ET_Core_PageResource::get_cache_directory(), $lang );
 	$files  = glob( sprintf( '%s/%s-%s-*.js', $cache, $prefix, $post_type ) );
 	$exists = is_array( $files ) && count( $files ) > 0;
@@ -64,7 +124,7 @@ function et_fb_get_dynamic_asset( $prefix, $post_type = false, $update = false )
 		$content = apply_filters( "et_fb_get_asset_$prefix", false, $post_type );
 		if ( $exists && $update ) {
 			// Compare with old one (when a previous version exists)
-			$update = et_()->WPFS()->get_contents( $file ) !== $content;
+			$update = file_get_contents( $file ) !== $content;
 		}
 		if ( ( $update || ! $exists ) ) {
 
@@ -84,7 +144,7 @@ function et_fb_get_dynamic_asset( $prefix, $post_type = false, $update = false )
 			$uniq = str_replace( '.', '', (string) microtime( true ) );
 			$file = sprintf( '%s/%s-%s-%s.js', $cache, $prefix, $post_type, $uniq );
 
-			if ( wp_is_writable( dirname( $file ) ) && et_()->WPFS()->put_contents( $file, $content ) ) {
+			if ( is_writable( dirname( $file ) ) && file_put_contents( $file, $content ) ) {
 				$updated = true;
 				$exists  = true;
 			}
@@ -92,8 +152,9 @@ function et_fb_get_dynamic_asset( $prefix, $post_type = false, $update = false )
 	}
 
 	$url = ! $exists ? false : sprintf(
-		'%s/%s-%s-%s.js',
-		et_()->path( et_core_cache_dir()->url, $lang ),
+		'%s/%s/%s-%s-%s.js',
+		content_url( ET_Core_PageResource::get_cache_directory( 'relative' ) ),
+		$lang,
 		$prefix,
 		$post_type,
 		$uniq
@@ -105,44 +166,6 @@ function et_fb_get_dynamic_asset( $prefix, $post_type = false, $update = false )
 	);
 }
 
-function et_fb_backend_helpers_boot( $helpers ) {
-	$helpers['boot'] = 'fast';
-	return $helpers;
-}
-
-function et_fb_app_only_bundle_deps( $deps = null ) {
-	static $_deps = array();
-
-	// Set deps if argument is passed.
-	if ( $deps ) {
-		// Some bundle deps are still required in top window.
-		$top   = array(
-			'jquery',
-			'underscore',
-			'jquery-ui-core',
-			'jquery-ui-draggable',
-			'jquery-ui-resizable',
-			'jquery-ui-sortable',
-			'jquery-effects-core',
-			'iris',
-			'wp-color-picker',
-			'wp-color-picker-alpha',
-			'et-profiler',
-			'react-tiny-mce',
-			'et_pb_admin_date_addon_js',
-			'google-maps-api',
-			'react',
-			'react-dom',
-			'wp-hooks',
-
-			// If minified JS is served, minified JS script name is outputted instead
-			apply_filters( 'et_builder_modules_script_handle', 'et-builder-modules-script' )
-		);
-		$_deps = array_diff( $deps, $top );
-	}
-
-	return $_deps;
-}
 
 function et_fb_enqueue_assets() {
 	global $wp_version;
@@ -156,6 +179,25 @@ function et_fb_enqueue_assets() {
 
 	// Get WP major version
 	$wp_major_version = substr( $wp_version, 0, 3 );
+
+	// Register scripts.
+	wp_register_script( 'iris', admin_url( 'js/iris.min.js' ), array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), false, 1 );
+	wp_register_script( 'wp-color-picker', admin_url( 'js/color-picker.min.js' ), array( 'iris' ), false, 1 );
+
+	if ( version_compare( $wp_major_version, '4.9', '>=' ) ) {
+		wp_register_script( 'wp-color-picker-alpha', "{$root}/scripts/ext/wp-color-picker-alpha.min.js", array( 'jquery', 'wp-color-picker' ), ET_BUILDER_VERSION, true );
+	} else {
+		wp_register_script( 'wp-color-picker-alpha', "{$root}/scripts/ext/wp-color-picker-alpha-48.min.js", array( 'jquery', 'wp-color-picker' ), ET_BUILDER_VERSION, true );
+	}
+
+	$colorpicker_l10n = array(
+		'clear'         => esc_html__( 'Clear', 'et_builder' ),
+		'defaultString' => esc_html__( 'Default', 'et_builder' ),
+		'pick'          => esc_html__( 'Select Color', 'et_builder' ),
+		'current'       => esc_html__( 'Current Color', 'et_builder' ),
+	);
+
+	wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', $colorpicker_l10n );
 
 	wp_register_script( 'react-tiny-mce', "{$assets}/vendors/tinymce.min.js" );
 
@@ -201,35 +243,18 @@ function et_fb_enqueue_assets() {
 		$builder_modules_script_handle,
 	);
 
-	if ( ! wp_script_is( 'wp-hooks', 'registered' ) ) {
-		// Use bundled wp-hooks script when WP < 5.0
-		wp_register_script( 'wp-hooks', "{$assets}/backports/hooks.js" );
-		$dependencies_list[] = 'wp-hooks';
-	}
-
 	// Add dependency on et-shortcode-js only if Divi Theme is used or ET Shortcodes plugin activated
 	if ( ! et_is_builder_plugin_active() || et_is_shortcodes_plugin_active() ) {
 		$dependencies_list[] = 'et-shortcodes-js';
 	}
 
-	$cached_assets_deps = array();
 	if ( defined( 'ET_BUILDER_CACHE_ASSETS' ) && ET_BUILDER_CACHE_ASSETS ) {
 		// Use cached files for helpers and definitions
 		foreach ( array( 'helpers', 'definitions' ) as $asset ) {
 			if ( $url = et_()->array_get( et_fb_get_dynamic_asset( $asset ), 'url' ) ) {
 				// The asset exists, we can add it to bundle's dependencies
-				$key                = "et-dynamic-asset-$asset";
-				/**
-				 * Filters the dependencies of cached assets.
-				 *
-				 * @since ?
-				 *
-				 * @param array $deps.
-				 * @param string $key.
-				 */
-				$deps               = apply_filters( 'et_builder_dynamic_asset_deps', array(), $key );
-				$cached_assets_deps = array_merge( $cached_assets_deps, $deps );
-				wp_register_script( $key, $url, $deps, ET_BUILDER_VERSION );
+				$key = "et-dynamic-asset-$asset";
+				wp_register_script( $key, $url, array(), ET_BUILDER_VERSION );
 				$dependencies_list[] = $key;
 			}
 		}
@@ -260,22 +285,8 @@ function et_fb_enqueue_assets() {
 
 	et_fb_enqueue_react();
 
-	// Detect if it's a production build by checking if `bundle.css` exists.
-	$is_production   = file_exists( sprintf( '%sfrontend-builder/build/bundle.css', ET_BUILDER_DIR ) );
-	$external_assets = wp_script_is( 'et-dynamic-asset-helpers', 'registered' );
-
-	if ( $is_production && $external_assets && ! et_builder_bfb_enabled() && ! et_builder_tb_enabled() ) {
-		// Set bundle deps.
-		et_fb_app_only_bundle_deps( array_merge( $fb_bundle_dependencies, $cached_assets_deps ) );
-		add_filter( 'script_loader_tag', 'et_fb_app_src', 10, 3 );
-		// Enqueue the top window VB boot script.
-		et_fb_enqueue_bundle( 'et-frontend-builder', 'boot.js', $fb_bundle_dependencies );
-		// Add boot mode to helpers.
-		add_filter( 'et_fb_backend_helpers', 'et_fb_backend_helpers_boot' );
-	} else {
-		// Enqueue the appropriate bundle js (hot/start/build)
-		et_fb_enqueue_bundle( 'et-frontend-builder', 'bundle.js', $fb_bundle_dependencies );
-	}
+	// Enqueue the appropriate bundle js (hot/start/build)
+	et_fb_enqueue_bundle( 'et-frontend-builder', 'bundle.js', $fb_bundle_dependencies );
 
 	// Search for additional bundles
 	$additional_bundles = array();
@@ -309,21 +320,6 @@ function et_fb_enqueue_assets() {
 	do_action( 'et_fb_enqueue_assets' );
 }
 
-function et_fb_app_src( $tag, $handle, $src ) {
-	// phpcs:disable WordPress.WP.EnqueuedResources.NonEnqueuedScript
-	// Replace boot with bundle in app window.
-	if ( 'et-frontend-builder' === $handle ) {
-		$bundle_url = esc_url( str_replace( 'boot.js', 'bundle.js', $src ) );
-		return str_replace( 'src=', sprintf( 'data-et-vb-app-src="%1$s" src=', $bundle_url ), $tag );
-	}
-
-	// Only load (most) bundle deps in app window.
-	if ( in_array( $handle, et_fb_app_only_bundle_deps() )) {
-		return sprintf( '<script data-et-vb-app-src="%1$s"></script>', esc_url( $src ) );
-	}
-	return $tag;
-	// phpcs:enable
-}
 
 /**
  * Disable admin bar styling for HTML in VB. BFB doesn't loaded admin bar and  VB loads admin bar
@@ -363,3 +359,26 @@ function et_fb_set_editor_available_cookie() {
 	}
 }
 add_action( 'et_fb_framework_loaded', 'et_fb_set_editor_available_cookie' );
+
+
+if ( ! function_exists( 'et_fb_enqueue_react' ) ):
+function et_fb_enqueue_react() {
+	$DEBUG         = defined( 'ET_DEBUG' ) && ET_DEBUG;
+	$core_scripts  = ET_CORE_URL . 'admin/js';
+	$react_version = '16.7.0';
+
+	wp_dequeue_script( 'react' );
+	wp_dequeue_script( 'react-dom' );
+	wp_deregister_script( 'react' );
+	wp_deregister_script( 'react-dom' );
+
+	if ( $DEBUG || DiviExtensions::is_debugging_extension() ) {
+		wp_enqueue_script( 'react', 'https://cdn.jsdelivr.net/npm/react@16/umd/react.development.js', array(), $react_version, true );
+		wp_enqueue_script( 'react-dom', 'https://cdn.jsdelivr.net/npm/react-dom@16/umd/react-dom.development.js', array( 'react' ), $react_version, true );
+		add_filter( 'script_loader_tag', 'et_core_add_crossorigin_attribute', 10, 3 );
+	} else {
+		wp_enqueue_script( 'react', "{$core_scripts}/react.production.min.js", array(), $react_version, true );
+		wp_enqueue_script( 'react-dom', "{$core_scripts}/react-dom.production.min.js", array( 'react' ), $react_version, true );
+	}
+}
+endif;

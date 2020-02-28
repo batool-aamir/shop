@@ -3,20 +3,12 @@
 /**
  * Boots Frond End Builder App,
  *
- * @return string Front End Builder wrap if main query, $content otherwise.
+ * @return Front End Builder wrap if main query, $content otherwise.
  */
 function et_fb_app_boot( $content ) {
 	// Instances of React app
 	static $instances = 0;
 	$is_new_page = isset( $_GET['is_new_page'] ) && '1' === $_GET['is_new_page'];
-
-	$main_query_post      = ET_Post_Stack::get_main_post();
-	$main_query_post_type = $main_query_post ? $main_query_post->post_type : '';
-
-	if ( ET_Builder_Element::is_theme_builder_layout() && ! et_theme_builder_is_layout_post_type( $main_query_post_type ) ) {
-		// Prevent boot if we are rendering a TB layout and not the real WP Query post.
-		return $content;
-	}
 
 	// Don't boot the app if the builder is not in use
 	if ( ! et_pb_is_pagebuilder_used( get_the_ID() ) || doing_filter( 'get_the_excerpt' ) ) {
@@ -56,7 +48,6 @@ function et_fb_app_boot( $content ) {
 	return $content;
 }
 add_filter( 'the_content', 'et_fb_app_boot', 1 );
-add_filter( 'et_builder_render_layout', 'et_fb_app_boot', 1 );
 
 function et_fb_wp_nav_menu( $menu ) {
 	// Ensure we fix any unclosed HTML tags in menu since they would break the VB
@@ -134,10 +125,6 @@ function et_fb_add_body_class( $classes ) {
 		$classes[] = 'et-bfb';
 	}
 
-	if ( et_builder_tb_enabled() ) {
-		$classes[] = 'et-tb';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'et_fb_add_body_class' );
@@ -187,15 +174,20 @@ add_filter( 'et_fb_app_preloader_class', 'et_bfb_app_preloader_class' );
 
 function et_builder_inject_preboot_script() {
 	$et_debug = defined( 'ET_DEBUG' ) && ET_DEBUG;
-	$preboot  = array(
-		'debug'  => $et_debug || DiviExtensions::is_debugging_extension(),
-		'is_BFB' => et_builder_bfb_enabled(),
-		'is_TB'  => et_builder_tb_enabled(),
-	);
+	$is_debug = 'false';
+	$is_BFB   = 'false';
+
+	if ( $et_debug || DiviExtensions::is_debugging_extension() ) {
+		$is_debug = 'true';
+	}
+
+	if ( et_builder_bfb_enabled() ) {
+		$is_BFB = 'true';
+	}
 
 	$preboot_path   = ET_BUILDER_DIR . 'frontend-builder/build/preboot.js';
 	if ( file_exists( $preboot_path ) ) {
-		$preboot_script = et_()->WPFS()->get_contents( $preboot_path );
+		$preboot_script = file_get_contents( $preboot_path );
 	} else {
 		// if the file doesn't exists, it means we're using `yarn hot`
 		$site_url = wp_parse_url( get_site_url() );
@@ -213,7 +205,7 @@ function et_builder_inject_preboot_script() {
 
 	echo "
 		<script id='et-builder-preboot'>
-			var et_fb_preboot = " . wp_json_encode( $preboot ) . ";
+			var et_fb_preboot = { debug: {$is_debug}, is_BFB: {$is_BFB} };
 
 			// Disable Google Tag Manager
 			window.dataLayer = [{'gtm.blacklist': ['google', 'nonGoogleScripts', 'customScripts', 'customPixels', 'nonGooglePixels']}];

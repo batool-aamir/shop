@@ -71,76 +71,76 @@ class ET_Builder_Plugin_Compat_Easy_Digital_Downloads extends ET_Builder_Plugin_
 		// Normalize UI for Divi Builder
 		if ( et_is_builder_plugin_active() ) {
 			wp_add_inline_style( 'et-builder-modules-style', "
-				" . ET_BUILDER_CSS_PREFIX . " .edd_download_inner {
+				.et-db #et-boc .edd_download_inner {
 					padding: 0 8px 8px;
 					margin: 0 0 10px;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " .edd_download_excerpt p {
+				.et-db #et-boc .edd_download_excerpt p {
 					margin-bottom: 25px;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " .edd_purchase_submit_wrapper {
+				.et-db #et-boc .edd_purchase_submit_wrapper {
 					margin-top: 15px;
 					margin-bottom: 35px;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " ul.edd-cart {
+				.et-db #et-boc ul.edd-cart {
 					border: 1px solid #eee;
 					margin-top: 0.8em;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " ul.edd-cart li {
+				.et-db #et-boc ul.edd-cart li {
 					padding: 0.8em 1.387em;
 					border-bottom: 1px solid #eee;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " ul.edd-cart li:last-child {
+				.et-db #et-boc ul.edd-cart li:last-child {
 					border-bottom: none;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " ul.edd-cart .edd-cart-item span {
+				.et-db #et-boc ul.edd-cart .edd-cart-item span {
 					padding: 0 3px;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " ul.edd-cart .edd-cart-item a {
+				.et-db #et-boc ul.edd-cart .edd-cart-item a {
 					text-decoration: underline !important;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " .edd_cart_item_image {
+				.et-db #et-boc .edd_cart_item_image {
 					margin-right: 10px;
 					display: inline-block;
 					vertical-align: middle;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " .edd-cart-meta.edd_subtotal,
-				" . ET_BUILDER_CSS_PREFIX . " .edd-cart-meta.edd_total {
+				.et-db #et-boc .edd-cart-meta.edd_subtotal,
+				.et-db #et-boc .edd-cart-meta.edd_total {
 					background: #f9f9f9;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " .cart_item.edd_checkout {
+				.et-db #et-boc .cart_item.edd_checkout {
 					padding: 1.387em;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " .et_pb_module a.edd_cart_remove_item_btn {
+				.et-db #et-boc .et_pb_module a.edd_cart_remove_item_btn {
 					text-decoration: underline !important;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " #edd_profile_editor_form .edd-select,
-				" . ET_BUILDER_CSS_PREFIX . " #edd_profile_editor_form .edd-input {
+				.et-db #et-boc #edd_profile_editor_form .edd-select,
+				.et-db #et-boc #edd_profile_editor_form .edd-input {
 					margin-bottom: 5px;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " #edd_final_total_wrap {
+				.et-db #et-boc #edd_final_total_wrap {
 					margin-bottom: 20px;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " .et_pb_module .et_pb_button {
+				.et-db #et-boc .et_pb_module .et_pb_button {
 					border-bottom-style: solid;
 					border-bottom-width: 2px;
 				}
 
-				" . ET_BUILDER_CSS_PREFIX . " .et_pb_module input.et_pb_button:hover {
+				.et-db #et-boc .et_pb_module input.et_pb_button:hover {
 					padding-right: 1em;
 				}
 			" );

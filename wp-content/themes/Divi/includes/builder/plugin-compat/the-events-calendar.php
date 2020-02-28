@@ -42,7 +42,6 @@ class ET_Builder_Plugin_Compat_The_Events_Calendar extends ET_Builder_Plugin_Com
 		}
 
 		add_action( 'wp', array( $this, 'register_spoofed_post_fix' ) );
-		add_action( 'loop_start', array( $this, 'maybe_disable_post_spoofing' ), 11 );
 	}
 
 	/**
@@ -92,7 +91,7 @@ class ET_Builder_Plugin_Compat_The_Events_Calendar extends ET_Builder_Plugin_Com
 		$GLOBALS['post'] = $this->actual_post_query; // phpcs:ignore WordPress.Variables.GlobalVariables.OverrideProhibited
 	}
 
-	/**
+	/*
 	 * Re-return actual $post object into spoofed post so The Event Calendar works as expected
 	 *
 	 * @since 3.10
@@ -101,17 +100,6 @@ class ET_Builder_Plugin_Compat_The_Events_Calendar extends ET_Builder_Plugin_Com
 	 */
 	function respoofed_post_query() {
 		$GLOBALS['post'] = $this->spoofed_post_query; // phpcs:ignore WordPress.Variables.GlobalVariables.OverrideProhibited
-	}
-
-	/**
-	 * Maybe disable post spoofing when a TB body layout is used.
-	 *
-	 * @since ??
-	 */
-	function maybe_disable_post_spoofing() {
-		if ( et_theme_builder_overrides_layout( ET_THEME_BUILDER_BODY_LAYOUT_POST_TYPE ) ) {
-			remove_action( 'the_post', array( 'Tribe__Events__Templates', 'spoof_the_post' ) );
-		}
 	}
 }
 

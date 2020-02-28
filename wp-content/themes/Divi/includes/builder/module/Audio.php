@@ -19,11 +19,13 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 			),
 			'advanced' => array(
 				'toggles' => array(
+					'text' => array(
+						'title'    => esc_html__( 'Text', 'et_builder' ),
+						'priority' => 49,
+					),
 					'image' => array(
 						'title' => esc_html__( 'Image', 'et_builder' ),
-					),
-					'text'  => array(
-						'title' => esc_html__( 'Text', 'et_builder' ),
+						'priority' => 51,
 					),
 				),
 			),
@@ -63,38 +65,10 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 					),
 				),
 			),
-			'borders'               => array(
-				'default' => array(),
-				'image'   => array(
-					'css'          => array(
-						'main' => array(
-							'border_radii'  => '%%order_class%% .et_pb_audio_cover_art',
-							'border_styles' => '%%order_class%% .et_pb_audio_cover_art',
-						)
-					),
-					'label_prefix' => esc_html__( 'Image', 'et_builder' ),
-					'tab_slug'     => 'advanced',
-					'toggle_slug'  => 'image',
-				),
-			),
 			'box_shadow'            => array(
 				'default' => array(
 					'css' => array(
 						'overlay' => 'inset',
-					),
-				),
-				'image'   => array(
-					'label'             => esc_html__( 'Image Box Shadow', 'et_builder' ),
-					'option_category'   => 'layout',
-					'tab_slug'          => 'advanced',
-					'toggle_slug'       => 'image',
-					'css'               => array(
-						'main'    => '%%order_class%% .et_pb_audio_cover_art',
-						'overlay' => 'inset',
-					),
-					'default_on_fronts' => array(
-						'color'    => '',
-						'position' => '',
 					),
 				),
 			),
@@ -140,9 +114,6 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 				),
 			),
 			'button'                => false,
-			'position_fields'       => array(
-				'default' => 'relative',
-			),
 		);
 
 		$this->custom_css_fields = array(
@@ -168,7 +139,7 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 			),
 			'audio_timer' => array(
 				'label'    => esc_html__( 'Player Timer', 'et_builder' ),
-				'selector' => '.mejs-time.mejs-duration-container .mejs-duration',
+				'selector' => '.mejs-time.mejs-currenttime-container.custom',
 			),
 			'audio_sliders' => array(
 				'label'    => esc_html__( 'Player Sliders', 'et_builder' ),
@@ -229,7 +200,7 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 	function get_fields() {
 		$fields = array(
 			'audio' => array(
-				'label'              => esc_html__( 'Audio File', 'et_builder' ),
+				'label'              => esc_html__( 'Audio', 'et_builder' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'data_type'          => 'audio',
@@ -249,31 +220,25 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 				'description'     => esc_html__( 'Define a title.', 'et_builder' ),
 				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
-				'mobile_options'  => true,
-				'hover'           => 'tabs',
 			),
 			'artist_name' => array(
-				'label'           => esc_html__( 'Artist', 'et_builder' ),
+				'label'           => esc_html__( 'Artist Name', 'et_builder' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Define an artist name.', 'et_builder' ),
 				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
-				'mobile_options'  => true,
-				'hover'           => 'tabs',
 			),
 			'album_name' => array(
-				'label'           => esc_html__( 'Album', 'et_builder' ),
+				'label'           => esc_html__( 'Album name', 'et_builder' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Define an album name.', 'et_builder' ),
 				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
-				'mobile_options'  => true,
-				'hover'           => 'tabs',
 			),
 			'image_url' => array(
-				'label'              => esc_html__( 'Image', 'et_builder' ),
+				'label'              => esc_html__( 'Cover Art Image URL', 'et_builder' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'upload_button_text' => esc_attr__( 'Upload an image', 'et_builder' ),
@@ -285,8 +250,6 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 					'__audio',
 				),
 				'dynamic_content'    => 'image',
-				'mobile_options'     => true,
-				'hover'              => 'tabs',
 			),
 			'__audio' => array(
 				'type'                => 'computed',
@@ -321,58 +284,57 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 	function render( $attrs, $content = null, $render_slug ) {
 		global $wp_version;
 
-		$multi_view                      = et_pb_multi_view_options( $this );
 		$audio                           = $this->props['audio'];
-		$title                           = $multi_view->render_element( array(
-			'tag'     => et_pb_process_header_level( $this->props['title_level'], 'h2' ),
-			'content' => '{{title}}',
-			'attrs'   => array(
-				'class' => 'et_pb_module_header',
-			),
-		) );
+		$title                           = $this->_esc_attr( 'title' );
 		$artist_name                     = $this->_esc_attr( 'artist_name' );
 		$album_name                      = $this->_esc_attr( 'album_name' );
-		$image_url                       = $multi_view->render_element( array(
-			'tag'      => 'div',
-			'styles'   => array(
-				'background-image' => 'url({{image_url}})',
-			),
-			'classes'  => array(
-				'et_pb_audio_cover_art' => array(
-					'image_url' => '__not_empty',
-				),
-			),
-			'required' => 'image_url',
-		) );
+		$image_url                       = $this->props['image_url'];
+		$background_layout               = $this->props['background_layout'];
+		$background_layout_hover         = et_pb_hover_options()->get_value( 'background_layout', $this->props, 'light' );
+		$header_level                    = $this->props['title_level'];
 
-		// Background layout data attributes.
-		$data_background_layout = et_pb_background_layout_options()->get_background_layout_attrs( $this->props );
+		$meta = $cover_art = '';
 
-		$meta  = '';
-		$metas = array();
+		$data_background_layout       = '';
+		$data_background_layout_hover = '';
 
-		$artist_name = $multi_view->render_element( array(
-			'tag'     => 'strong',
-			'content' => '{{artist_name}}',
-		) );
-
-		if ( $artist_name ) {
-			$metas[] = sprintf(
-				et_get_safe_localization( _x( 'by %1$s', 'Audio Module meta information', 'et_builder' ) ),
-				et_core_esc_previously( $artist_name )
+		if ( et_pb_hover_options()->is_enabled( 'background_layout', $this->props ) ) {
+			$data_background_layout = sprintf(
+				' data-background-layout="%1$s"',
+				esc_attr( $background_layout )
+			);
+			$data_background_layout_hover = sprintf(
+				' data-background-layout-hover="%1$s"',
+				esc_attr( $background_layout_hover )
 			);
 		}
 
-		$album_name = $multi_view->render_element( array(
-			'content' => '{{album_name}}',
-		) );
+		if ( '' !== $artist_name || '' !== $album_name ) {
+			if ( '' !== $artist_name && '' !== $album_name ) {
+				$album_name = ' | ' . $album_name;
+			}
 
-		if ( $album_name ) {
-			$metas[] = $album_name;
+			if ( '' !== $artist_name ) {
+				$artist_name = sprintf(
+					et_get_safe_localization( _x( 'by <strong>%1$s</strong>', 'Audio Module meta information', 'et_builder' ) ),
+					et_core_esc_previously( $artist_name )
+				);
+			}
+
+			$meta = sprintf( '%1$s%2$s',
+				et_core_esc_previously( $artist_name ),
+				et_core_esc_previously( $album_name )
+			);
+
+			$meta = sprintf( '<p class="et_audio_module_meta">%1$s</p>', $meta );
 		}
 
-		if ( $metas ) {
-			$meta = sprintf( '<p class="et_audio_module_meta">%1$s</p>', implode( ' | ', $metas ) );
+		if ( '' !== $image_url ) {
+			$cover_art = sprintf(
+				'<div class="et_pb_audio_cover_art" style="background-image: url(%1$s);">
+				</div>',
+				esc_url( $image_url )
+			);
 		}
 
 		$parallax_image_background = $this->get_parallax_image_background();
@@ -392,11 +354,12 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 		$this->add_classname( array(
 			'et_pb_audio_module',
 			'clearfix',
+			"et_pb_bg_layout_{$background_layout}",
 		) );
 
-		// Background layout class names.
-		$background_layout_class_names = et_pb_background_layout_options()->get_background_layout_class( $this->props, false, true );
-		$this->add_classname( $background_layout_class_names );
+		if ( 'light' === $background_layout ) {
+			$this->add_classname( 'et_pb_text_color_dark' );
+		}
 
 		if ( '' === $image_url ) {
 			$this->add_classname( 'et_pb_audio_no_image' );
@@ -419,14 +382,6 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 			$this->add_classname( 'et_pb_audio_legacy' );
 		}
 
-		$muti_view_data_attr = $multi_view->render_attrs( array(
-			'classes' => array(
-				'et_pb_audio_no_image' => array(
-					'image_url' => '__empty',
-				),
-			)
-		) );
-
 		$output = sprintf(
 			'<div%6$s class="%4$s"%9$s%10$s>
 				%8$s
@@ -438,59 +393,21 @@ class ET_Builder_Module_Audio extends ET_Builder_Module {
 					%3$s
 				</div>
 			</div>',
-			$title, // #1
-			et_core_esc_previously( $meta ), // #2
+			( '' !== $title ? sprintf( '<%1$s class="et_pb_module_header">%2$s</%1$s>', et_pb_process_header_level( $header_level, 'h2' ), et_core_esc_previously( $title ) ) : '' ),
+			et_core_esc_previously( $meta ),
 			self::get_audio( array(
 				'audio' => $audio,
-			) ), // #3
-			$this->module_classname( $render_slug ), // #4
-			et_core_esc_previously( $image_url ), // #5
-			$this->module_id(), // #6
-			$video_background, // #7
-			$parallax_image_background, // #8
-			et_core_esc_previously( $data_background_layout ), // #9
-			et_core_esc_previously( $muti_view_data_attr ) // #10
+			) ),
+			$this->module_classname( $render_slug ),
+			et_core_esc_previously( $cover_art ),
+			$this->module_id(),
+			$video_background,
+			$parallax_image_background,
+			et_core_esc_previously( $data_background_layout ), // #10
+			et_core_esc_previously( $data_background_layout_hover )
 		);
 
 		return $output;
-	}
-
-	/**
-	 * Filter multi view value.
-	 *
-	 * @since 3.27.1
-	 *
-	 * @see ET_Builder_Module_Helper_MultiViewOptions::filter_value
-	 *
-	 * @param mixed $raw_value Props raw value.
-	 * @param array $args {
-	 *     Context data.
-	 *
-	 *     @type string $context      Context param: content, attrs, visibility, classes.
-	 *     @type string $name         Module options props name.
-	 *     @type string $mode         Current data mode: desktop, hover, tablet, phone.
-	 *     @type string $attr_key     Attribute key for attrs context data. Example: src, class, etc.
-	 *     @type string $attr_sub_key Attribute sub key that availabe when passing attrs value as array such as styes. Example: padding-top, margin-botton, etc.
-	 * }
-	 * @param ET_Builder_Module_Helper_MultiViewOptions $multi_view Multiview object instance.
-	 *
-	 * @return mixed
-	 */
-	public function multi_view_filter_value( $raw_value, $args, $multi_view ) {
-		$name = isset( $args['name'] ) ? $args['name'] : '';
-		$mode = isset( $args['mode'] ) ? $args['mode'] : '';
-
-		$fields_need_escape = array(
-			'title',
-			'artist_name',
-			'album_name',
-		);
-
-		if ( $raw_value && in_array( $name, $fields_need_escape, true ) ) {
-			return $this->_esc_attr( $multi_view->get_name_by_mode( $name, $mode ) );
-		}
-
-		return $raw_value;
 	}
 }
 

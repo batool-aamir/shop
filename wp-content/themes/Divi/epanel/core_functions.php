@@ -235,19 +235,7 @@ if ( ! function_exists( 'et_build_epanel' ) ) {
 								<div id="epanel-header">
 									<h1 id="epanel-title"><?php printf( esc_html__( '%s Theme Options', $themename ), esc_html( $themename ) ); ?></h1>
 									<a href="#" class="et-defaults-button epanel-reset" title="<?php esc_attr_e( 'Reset to Defaults', $themename ); ?>"><span class="label"><?php esc_html_e( 'Reset to Defaults', $themename ); ?></span></a>
-									<?php
-									$portability_link = function_exists( 'et_builder_portability_link' )
-										? 'et_builder_portability_link'
-										: 'et_core_portability_link';
-
-									echo et_core_esc_previously(
-										call_user_func(
-											$portability_link,
-											'epanel',
-											array( 'class' => 'et-defaults-button epanel-portability' )
-										)
-									);
-									?>
+									<?php echo et_core_esc_previously( et_core_portability_link( 'epanel', array( 'class' => 'et-defaults-button epanel-portability' ) ) ); ?>
 								</div>
 								<ul id="epanel-mainmenu">
 									<?php
@@ -1050,24 +1038,3 @@ function et_epanel_register_portability() {
 	) );
 }
 add_action( 'admin_init', 'et_epanel_register_portability' );
-
-/**
- * Flush rewrite rules when a change in CPTs with builder enabled is detected.
- *
- * @since ??
- *
- * @param string $et_option_name
- * @param mixed $et_option_new_value
- */
-function et_epanel_flush_rewrite_rules_on_post_type_integration( $et_option_name, $et_option_new_value ) {
-    if ( 'et_pb_post_type_integration' !== $et_option_name ) {
-        return;
-    }
-
-    $old = et_get_option( $et_option_name, array() );
-
-    if ( $et_option_new_value !== $old ) {
-        flush_rewrite_rules();
-    }
-}
-add_action( 'et_epanel_update_option', 'et_epanel_flush_rewrite_rules_on_post_type_integration', 10, 2 );

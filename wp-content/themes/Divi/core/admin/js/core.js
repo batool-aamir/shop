@@ -11,18 +11,13 @@
 		},
 
 		$selector: function(selector) {
-			if (window.ET_Builder) {
-				return window.ET_Builder.Frames.top.jQuery(selector);
-			}
-
 			return window.top ? window.top.jQuery(selector) : jQuery(selector);
-		},
+		},		
 
 		applyMaxHeight: function() {
 			var $et_core_modal_overlay = this.$selector('.et-core-modal-overlay');
 			var $et_core_modal = $et_core_modal_overlay.find('.et-core-modal');
 			var overlay_height = $et_core_modal_overlay.innerHeight();
-			var no_scroll_fix = !$et_core_modal_overlay.hasClass('et-core-modal-overlay-scroll-fix');
 			var disabled_scrollbar_class = 'et-core-modal-disabled-scrollbar';
 			var et_core_modal_height;
 
@@ -30,18 +25,9 @@
 				return;
 			}
 
-			if (no_scroll_fix) {
-				$et_core_modal_overlay.addClass( disabled_scrollbar_class );
-			}
+			$et_core_modal_overlay.addClass( disabled_scrollbar_class );
 
-			if ($et_core_modal_overlay.hasClass(disabled_scrollbar_class)) {
-				et_core_modal_height = $et_core_modal.innerHeight();
-			} else {
-				var content_height = Math.max($et_core_modal.find('.et-core-modal-content > *').height());
-				var header_height = $et_core_modal_overlay.find('.et-core-modal-header').outerHeight() || 0;
-				var buttons_height = $et_core_modal_overlay.find('.et_pb_prompt_buttons').outerHeight() || 0;
-				et_core_modal_height = header_height + buttons_height + content_height + 60 - 23;
-			}
+			et_core_modal_height = $et_core_modal.innerHeight();
 
 			if ( et_core_modal_height > ( overlay_height * 0.6 ) ) {
 				$et_core_modal_overlay.removeClass( disabled_scrollbar_class );
@@ -51,7 +37,6 @@
 				return;
 			}
 
-			$et_core_modal_overlay.addClass(disabled_scrollbar_class);
 			$et_core_modal.css( 'marginTop', '-' + ( et_core_modal_height / 2 ) + 'px' );
 		},
 
@@ -72,10 +57,6 @@
 			} );
 
 			$( document ).on( 'click', '[data-et-core-modal="close"], .et-core-modal-overlay', function( e ) {
-				if ($(this).data('et-core-disable-closing')) {
-					return;
-				}
-
 				$this.modalClose( e, this );
 			} );
 
@@ -178,21 +159,16 @@
 
 	} );
 
-	setTimeout(function() {
-		if ($('.wrap.woocommerce').length) {
-			return;
-		}
+	$( window ).on( 'et-core-modal-active', function() {
+		etCore.applyMaxHeight();
+	} );
 
-		$(window).on('et-core-modal-active', function() {
-			etCore.applyMaxHeight();
-		});
-
-		$(document).ready(function() {
-			etCore.init();
-		});
-
-		$(window).resize(function() {
-			etCore.applyMaxHeight();
-		});
+	$( document ).ready( function() {
+		etCore.init();
 	});
+
+	$( window ).resize( function() {
+		etCore.applyMaxHeight();
+	} );
+
 })(jQuery);

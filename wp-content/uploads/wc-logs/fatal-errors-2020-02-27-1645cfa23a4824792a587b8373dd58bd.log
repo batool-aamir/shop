@@ -1,0 +1,8 @@
+2020-02-27T07:12:31+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 16
+
+2020-02-27T07:46:57+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-admin\includes\class-wp-filesystem-direct.php on line 571
+
+2020-02-27T10:45:19+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-content\themes\Divi\core\functions.php on line 3
+
+2020-02-27T11:38:56+00:00 CRITICAL Out of memory (allocated 23068672) (tried to allocate 32768 bytes) in C:\xampp\htdocs\shop\wp-admin\includes\ajax-actions.php on line 3237
+

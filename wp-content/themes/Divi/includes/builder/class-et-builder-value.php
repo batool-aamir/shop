@@ -30,7 +30,7 @@ class ET_Builder_Value {
 	 *
 	 * @since 3.17.2
 	 *
-	 * @var mixed[]
+	 * @var array<string, mixed>
 	 */
 	protected $settings = array();
 

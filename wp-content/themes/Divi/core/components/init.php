@@ -5,8 +5,6 @@ if ( ! function_exists( 'et_core_init' ) ):
  * {@see 'plugins_loaded' (9999999) Must run after cache plugins have been loaded.}
  */
 function et_core_init() {
-	ET_Core_API_Spam_Providers::instance();
-	ET_Core_Cache_Directory::instance();
 	ET_Core_PageResource::startup();
 
 	if ( defined( 'ET_CORE_UPDATED' ) ) {
@@ -228,7 +226,7 @@ function et_core_page_resource_fallback() {
 		return;
 	}
 
-	/** @see ET_Core_SupportCenter::toggle_safe_mode */
+	/** @see ET_Support_Center::toggle_safe_mode */
 	if ( et_core_is_safe_mode_active() ) {
 		return;
 	}
@@ -270,7 +268,8 @@ if ( ! function_exists( 'et_core_page_resource_get' ) ):
  */
 function et_core_page_resource_get( $owner, $slug, $post_id = null, $priority = 10, $location = 'head-late', $type = 'style' ) {
 	$post_id = $post_id ? $post_id : et_core_page_resource_get_the_ID();
-	$_slug   = "et-{$owner}-{$slug}-{$post_id}-cached-inline-{$type}s";
+	$global  = 'global' === $post_id ? '-global' : '';
+	$_slug   = "et-{$owner}-{$slug}{$global}-cached-inline-{$type}s";
 
 	$all_resources = ET_Core_PageResource::get_resources();
 
@@ -291,7 +290,7 @@ function et_core_page_resource_maybe_output_fallback_script() {
 		return;
 	}
 
-	/** @see ET_Core_SupportCenter::toggle_safe_mode */
+	/** @see ET_Support_Center::toggle_safe_mode */
 	if ( et_core_is_safe_mode_active() ) {
 		return;
 	}
@@ -304,7 +303,7 @@ function et_core_page_resource_maybe_output_fallback_script() {
 	}
 
 	$SITE_URL = get_site_url();
-	$SCRIPT   = et_()->WPFS()->get_contents( ET_CORE_PATH . 'admin/js/page-resource-fallback.min.js' );
+	$SCRIPT   = file_get_contents( ET_CORE_PATH . 'admin/js/page-resource-fallback.min.js' );
 
 	printf( "<script>var et_site_url='%s';var et_post_id='%d';%s</script>",
 		et_core_esc_previously( $SITE_URL ),
@@ -351,21 +350,8 @@ function et_debug( $msg, $bt_index = 4, $log_ajax = true ) {
 endif;
 
 
-if ( ! function_exists( 'et_wrong' ) ):
-function et_wrong( $msg, $error = false ) {
-	$msg = "You're Doing It Wrong! {$msg}";
-
-	if ( $error ) {
-		et_error( $msg );
-	} else {
-		et_debug( $msg );
-	}
-}
-endif;
-
-
 if ( ! function_exists( 'et_error' ) ):
 function et_error( $msg, $bt_index = 4 ) {
-	ET_Core_Logger::error( "[ERROR]: {$msg}", $bt_index );
+	ET_Core_Logger::error( $msg, $bt_index );
 }
 endif;

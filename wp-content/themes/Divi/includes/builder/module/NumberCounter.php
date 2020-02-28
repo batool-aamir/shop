@@ -97,9 +97,6 @@ class ET_Builder_Module_Number_Counter extends ET_Builder_Module {
 				)
 			),
 			'button'                => false,
-			'position_fields'       => array(
-				'default' => 'relative',
-			),
 		);
 
 		if ( et_builder_has_limitation( 'force_use_global_important' ) ) {
@@ -123,8 +120,6 @@ class ET_Builder_Module_Number_Counter extends ET_Builder_Module {
 				'description'     => esc_html__( 'Input a title for the counter.', 'et_builder' ),
 				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
-				'mobile_options'  => true,
-				'hover'           => 'tabs',
 			),
 			'number' => array(
 				'label'           => esc_html__( 'Number', 'et_builder' ),
@@ -134,8 +129,6 @@ class ET_Builder_Module_Number_Counter extends ET_Builder_Module {
 				'description'     => esc_html__( "Define a number for the counter. (Don't include the percentage sign, use the option below.)", 'et_builder' ),
 				'toggle_slug'     => 'main_content',
 				'default_on_front' => '0',
-				'mobile_options'   => true,
-				'hover'            => 'tabs',
 			),
 			'percent_sign' => array(
 				'label'             => esc_html__( 'Percent Sign', 'et_builder' ),
@@ -148,8 +141,6 @@ class ET_Builder_Module_Number_Counter extends ET_Builder_Module {
 				'default_on_front' => 'on',
 				'toggle_slug'       => 'elements',
 				'description'       => esc_html__( 'Here you can choose whether the percent sign should be added after the number set above.', 'et_builder' ),
-				'mobile_options'    => true,
-				'hover'             => 'tabs',
 			),
 			'counter_color' => array(
 				'type'              => 'hidden',
@@ -163,17 +154,14 @@ class ET_Builder_Module_Number_Counter extends ET_Builder_Module {
 	function render( $attrs, $content = null, $render_slug ) {
 		wp_enqueue_script( 'easypiechart' );
 
-		$multi_view                      = et_pb_multi_view_options( $this );
 		$number                          = $this->props['number'];
 		$percent_sign                    = $this->props['percent_sign'];
-		$title                           = $multi_view->render_element( array(
-			'tag'     => et_pb_process_header_level( $this->props['title_level'], 'h3' ),
-			'content' => '{{title}}',
-			'attrs'   => array(
-				'class' => 'title',
-			),
-		) );
+		$title                           = $this->_esc_attr( 'title' );
 		$counter_color                   = $this->props['counter_color'];
+		$background_layout               = $this->props['background_layout'];
+		$background_layout_hover         = et_pb_hover_options()->get_value( 'background_layout', $this->props, 'light' );
+		$background_layout_hover_enabled = et_pb_hover_options()->is_enabled( 'background_layout', $this->props );
+		$header_level                    = $this->props['title_level'];
 
 		if ( et_builder_has_limitation( 'register_fittext_script' ) ) {
 			wp_enqueue_script( 'fittext' );
@@ -186,101 +174,48 @@ class ET_Builder_Module_Number_Counter extends ET_Builder_Module {
 
 		// Module classnames
 		$this->add_classname( array(
+			"et_pb_bg_layout_{$background_layout}",
 			$this->get_text_orientation_classname(),
 		) );
-
-		// Background layout class names.
-		$background_layout_class_names = et_pb_background_layout_options()->get_background_layout_class( $this->props );
-		$this->add_classname( $background_layout_class_names );
 
 		if ( '' !== $title ) {
 			$this->add_classname( 'et_pb_with_title' );
 		}
 
-		// Background layout data attributes.
-		$data_background_layout = et_pb_background_layout_options()->get_background_layout_attrs( $this->props );
-
-		$multi_view_data_attr = $multi_view->render_attrs( array(
-			'attrs' => array(
-				'data-number-value'     => '{{number}}',
-				'data-number-separator' => '{{number}}',
-				'data-percent-sign'     => '{{percent_sign}}',
-			),
-			'classes' => array(
-				'et_pb_with_title' => array(
-					'title' => '__not_empty',
-				),
-			)
-		) ) ;
+		$data_background_layout       = '';
+		$data_background_layout_hover = '';
+		if ( $background_layout_hover_enabled ) {
+			$data_background_layout = sprintf(
+				' data-background-layout="%1$s"',
+				esc_attr( $background_layout )
+			);
+			$data_background_layout_hover = sprintf(
+				' data-background-layout-hover="%1$s"',
+				esc_attr( $background_layout_hover )
+			);
+		}
 
 		$output = sprintf(
-			'<div%1$s class="%2$s" data-number-value="%3$s" data-number-separator="%7$s"%10$s>
+			'<div%1$s class="%2$s" data-number-value="%3$s" data-number-separator="%7$s"%10$s%11$s>
 				%9$s
 				%8$s
-				<div class="percent" %4$s%11$s><p><span class="percent-value"></span><span class="percent-sign">%5$s</span></p></div>
+				<div class="percent" %4$s><p><span class="percent-value"></span>%5$s</p></div>
 				%6$s
 			</div><!-- .et_pb_number_counter -->',
 			$this->module_id(),
 			$this->module_classname( $render_slug ),
 			esc_attr( $number ),
 			( '' !== $counter_color ? sprintf( ' style="color:%s"', esc_attr( $counter_color ) ) : '' ),
-			( 'on' == $multi_view->get_value( 'percent_sign' ) ? '%' : ''), // #5
-			$title,
+			( 'on' == $percent_sign ? '%' : ''), // #5
+			( '' !== $title ? sprintf( '<%1$s class="title">%2$s</%1$s>', et_pb_process_header_level( $header_level, 'h3' ), et_core_esc_previously( $title ) ) : '' ),
 			esc_attr( $separator ),
 			$video_background,
 			$parallax_image_background,
 			et_core_esc_previously( $data_background_layout ), // #10
-			$multi_view_data_attr
+			et_core_esc_previously( $data_background_layout_hover )
 		 );
 
 		return $output;
-	}
-
-	/**
-	 * Filter multi view value.
-	 *
-	 * @since 3.27.1
-	 *
-	 * @see ET_Builder_Module_Helper_MultiViewOptions::filter_value
-	 *
-	 * @param mixed $raw_value Props raw value.
-	 * @param array $args {
-	 *     Context data.
-	 *
-	 *     @type string $context      Context param: content, attrs, visibility, classes.
-	 *     @type string $name         Module options props name.
-	 *     @type string $mode         Current data mode: desktop, hover, tablet, phone.
-	 *     @type string $attr_key     Attribute key for attrs context data. Example: src, class, etc.
-	 *     @type string $attr_sub_key Attribute sub key that availabe when passing attrs value as array such as styes. Example: padding-top, margin-botton, etc.
-	 * }
-	 * @param ET_Builder_Module_Helper_MultiViewOptions $multi_view Multiview object instance.
-	 *
-	 * @return mixed
-	 */
-	public function multi_view_filter_value( $raw_value, $args, $multi_view ) {
-		$name     = isset( $args['name'] ) ? $args['name'] : '';
-		$mode     = isset( $args['mode'] ) ? $args['mode'] : '';
-		$attr_key = isset( $args['attr_key'] ) ? $args['attr_key'] : '';
-
-		if ( 'number' === $name ) {
-			if ( 'data-number-separator' === $attr_key ) {
-				return strpos( $raw_value, ',' ) ? ',' : '';
-			}
-
-			return str_replace( '%', '', $raw_value );
-		} else if ( 'percent_sign' === $name ) {
-			return 'on' === $raw_value ? '%' : '&nbsp;';
-		}
-
-		$fields_need_escape = array(
-			'title',
-		);
-
-		if ( $raw_value && in_array( $name, $fields_need_escape, true ) ) {
-			return $this->_esc_attr( $multi_view->get_name_by_mode( $name, $mode ) );
-		}
-
-		return $raw_value;
 	}
 }
 

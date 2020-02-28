@@ -37,7 +37,7 @@ class ET_Builder_Module_Sidebar extends ET_Builder_Module {
 				'body'   => array(
 					'label'    => esc_html__( 'Body', 'et_builder' ),
 					'css'      => array(
-						'main'        => "{$this->main_css_element}, {$this->main_css_element} li, {$this->main_css_element} li:before, {$this->main_css_element} a",
+						'main' => "{$this->main_css_element}, {$this->main_css_element} li, {$this->main_css_element} li:before, {$this->main_css_element} a",
 						'line_height' => "{$this->main_css_element} p",
 					),
 				),
@@ -84,7 +84,7 @@ class ET_Builder_Module_Sidebar extends ET_Builder_Module {
 	function get_fields() {
 		$fields = array(
 			'orientation' => array(
-				'label'             => esc_html__( 'Alignment', 'et_builder' ),
+				'label'             => esc_html__( 'Orientation', 'et_builder' ),
 				'type'              => 'select',
 				'option_category'   => 'layout',
 				'options'           => array(
@@ -108,7 +108,6 @@ class ET_Builder_Module_Sidebar extends ET_Builder_Module {
 			),
 			'show_border' => array(
 				'label'           => esc_html__( 'Show Border Separator', 'et_builder' ),
-				'description'     => esc_html__( 'Disabling the border separator will remove the solid line that appears to the left or right of sidebar widgets.', 'et_builder' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'layout',
 				'options'         => array(
@@ -184,6 +183,9 @@ class ET_Builder_Module_Sidebar extends ET_Builder_Module {
 	function render( $attrs, $content = null, $render_slug ) {
 		$orientation                     = $this->props['orientation'];
 		$area                            = "" === $this->props['area'] ? self::get_default_area() : $this->props['area'];
+		$background_layout               = $this->props['background_layout'];
+		$background_layout_hover         = et_pb_hover_options()->get_value( 'background_layout', $this->props, 'light' );
+		$background_layout_hover_enabled = et_pb_hover_options()->is_enabled( 'background_layout', $this->props );
 		$show_border                     = $this->props['show_border'];
 
 		$video_background          = $this->video_background();
@@ -204,14 +206,11 @@ class ET_Builder_Module_Sidebar extends ET_Builder_Module {
 		// Module classnames
 		$this->add_classname( array(
 			'et_pb_widget_area',
+			"et_pb_bg_layout_{$background_layout}",
 			'clearfix',
 			"et_pb_widget_area_{$orientation}",
 			$this->get_text_orientation_classname(),
 		) );
-
-		// Background layout class names.
-		$background_layout_class_names = et_pb_background_layout_options()->get_background_layout_class( $this->props );
-		$this->add_classname( $background_layout_class_names );
 
 		if ( 'on' !== $show_border ) {
 			$this->add_classname( 'et_pb_sidebar_no_border' );
@@ -222,11 +221,21 @@ class ET_Builder_Module_Sidebar extends ET_Builder_Module {
 			$render_slug,
 		) );
 
-		// Background layout data attributes.
-		$data_background_layout = et_pb_background_layout_options()->get_background_layout_attrs( $this->props );
+		$data_background_layout       = '';
+		$data_background_layout_hover = '';
+		if ( $background_layout_hover_enabled ) {
+			$data_background_layout = sprintf(
+				' data-background-layout="%1$s"',
+				esc_attr( $background_layout )
+			);
+			$data_background_layout_hover = sprintf(
+				' data-background-layout-hover="%1$s"',
+				esc_attr( $background_layout_hover )
+			);
+		}
 
 		$output = sprintf(
-			'<div%3$s class="%2$s"%6$s>
+			'<div%3$s class="%2$s"%6$s%7$s>
 				%5$s
 				%4$s
 				%1$s
@@ -236,7 +245,8 @@ class ET_Builder_Module_Sidebar extends ET_Builder_Module {
 			$this->module_id(),
 			$video_background,
 			$parallax_image_background, // #5
-			et_core_esc_previously( $data_background_layout )
+			et_core_esc_previously( $data_background_layout ),
+			et_core_esc_previously( $data_background_layout_hover )
 		);
 
 		return $output;

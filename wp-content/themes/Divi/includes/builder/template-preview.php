@@ -60,7 +60,25 @@ $post = get_post( $post_id );
 								$content = do_shortcode( wp_unslash( $_POST['shortcode'] ) );
 								$content = str_replace( ']]>', ']]&gt;', $content );
 
-								$content = et_builder_get_builder_content_opening_wrapper() . et_builder_get_layout_opening_wrapper() . $content . et_builder_get_layout_closing_wrapper() . et_builder_get_builder_content_closing_wrapper();
+								$outer_class   = apply_filters( 'et_builder_outer_content_class', array( 'et-boc' ) );
+								$outer_classes = implode( ' ', $outer_class );
+
+								$outer_id      = apply_filters( 'et_builder_outer_content_id', 'et-boc' );
+
+								$inner_class   = apply_filters( 'et_builder_inner_content_class', array( 'et_builder_inner_content' ) );
+								$inner_classes = implode( ' ', $inner_class );
+
+								$content = sprintf(
+									'<div class="%2$s" id="%4$s">
+										<div class="%3$s">
+											%1$s
+										</div>
+									</div>',
+									$content,
+									esc_attr( $outer_classes ),
+									esc_attr( $inner_classes ),
+									esc_attr( $outer_id )
+								);
 							} else {
 								$content = apply_filters( 'the_content', wp_unslash( $_POST['shortcode'] ) );
 								$content = str_replace( ']]>', ']]&gt;', $content );
@@ -78,7 +96,16 @@ $post = get_post( $post_id );
 
 					</div> <!-- .entry-content.post-content.entry -->
 					</div> <!-- #content -->
-					<?php echo et_builder_disabled_link_modal(); ?>
+					<div class="et_pb_modal_overlay link-disabled">
+						<div class="et_pb_prompt_modal">
+							<h3><?php esc_html_e( 'Link Disabled', 'et_builder' ); ?></h3>
+							<p><?php esc_html_e( 'During preview, link to different page is disabled', 'et_builder' ); ?></p>
+
+							<div class="et_pb_prompt_buttons">
+								<a href="#" class="et_pb_prompt_proceed"><?php esc_html_e( 'Close', 'et_builder' ); ?></a>
+							</div>
+						</div><!-- .et_pb_prompt_modal -->
+					</div><!-- .et_pb_modal_overlay -->
 				</div><!-- .container -->
 			</div><!-- #main-content -->
 		</div> <!-- #page-container -->

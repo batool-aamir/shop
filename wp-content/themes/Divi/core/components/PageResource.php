@@ -271,14 +271,16 @@ class ET_Core_PageResource {
 	 */
 	public function __construct( $owner, $slug, $post_id = null, $priority = 10, $location = 'head-late', $type = 'style' ) {
 		$this->owner    = self::_validate_property( 'owner', $owner );
-		$this->post_id  = self::_validate_property( 'post_id', $post_id ? $post_id : et_core_page_resource_get_the_ID() );
+		$this->post_id  = $post_id ? $post_id : et_core_page_resource_get_the_ID();
 
 		$this->type     = self::_validate_property( 'type', $type );
 		$this->location = self::_validate_property( 'location', $location );
 
 		$this->write_file_location = $this->location;
 
-		$this->filename = sanitize_file_name( "et-{$this->owner}-{$slug}-{$post_id}" );
+		$slug           = sanitize_text_field( $slug );
+		$global         = 'global' === $post_id ? '-global' : '';
+		$this->filename = "et-{$this->owner}-{$slug}{$global}";
 		$this->slug     = "{$this->filename}-cached-inline-{$this->type}s";
 
 		$this->data     = array();
@@ -320,8 +322,6 @@ class ET_Core_PageResource {
 
 		self::_register_callbacks();
 		self::_setup_wp_filesystem();
-
-		self::$_can_write = et_core_cache_dir()->can_write;
 	}
 
 	/**
@@ -342,11 +342,6 @@ class ET_Core_PageResource {
 		// Reset $_resources property; Mostly useful for unit test big request which needs to make
 		// each test*() method act like it is different page request
 		self::$_resources = null;
-
-		if ( et_()->WPFS()->exists( self::$WP_CONTENT_DIR . '/cache/et' ) ) {
-			// Remove old cache directory
-			et_()->WPFS()->rmdir( self::$WP_CONTENT_DIR . '/cache/et', true );
-		}
 	}
 
 	protected static function _assign_output_location( $location, $resource ) {
@@ -625,8 +620,19 @@ class ET_Core_PageResource {
 	 * Initializes the WPFilesystem class.
 	 */
 	protected static function _setup_wp_filesystem() {
-		// The wpfs instance will always exists at this point because the cache dir class initializes it beforehand
-		self::$wpfs = $GLOBALS['wp_filesystem'];
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+
+		if ( null !== self::$wpfs ) {
+			return;
+		}
+
+		if ( ! self::can_write_to_filesystem() || ! WP_Filesystem( true ) ) {
+			self::$_can_write = false;
+			return;
+		}
+
+		global $wp_filesystem;
+		self::$wpfs = $wp_filesystem;
 	}
 
 	/**
@@ -648,13 +654,13 @@ class ET_Core_PageResource {
 
 		switch( $property ) {
 			case 'path':
-				$value    = et_()->normalize_path( realpath( $value ) );
-				$is_valid = et_()->starts_with( $value, et_core_cache_dir()->path );
+				$value    = self::$data_utils->normalize_path( realpath( $value ) );
+				$is_valid = 0 === strpos( $value, self::$WP_CONTENT_DIR . '/cache/et' );
 				break;
 			case 'url':
-				$base_url = et_core_cache_dir()->url;
-				$is_valid = et_()->starts_with( $value, set_url_scheme( $base_url, 'http' ) );
-				$is_valid = $is_valid ? $is_valid : et_()->starts_with( $value, set_url_scheme( $base_url, 'https' ) );
+				$content_url = content_url( '/cache/et' );
+				$is_valid    = 0 === strpos( $value, set_url_scheme( $content_url, 'http' ) );
+				$is_valid    = $is_valid ? $is_valid : 0 === strpos( $value, set_url_scheme( $content_url, 'https' ) );
 				break;
 			case 'post_id':
 				$is_valid = 'global' === $value || 'all' === $value || is_numeric( $value );
@@ -673,7 +679,13 @@ class ET_Core_PageResource {
 	 * @return bool
 	 */
 	public static function can_write_to_filesystem() {
-		return et_core_cache_dir()->can_write;
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+
+		if ( null === self::$_can_write ) {
+			self::$_can_write = 'direct' === get_filesystem_method( array(), self::$WP_CONTENT_DIR );
+		}
+
+		return self::$_can_write;
 	}
 
 	/**
@@ -689,13 +701,25 @@ class ET_Core_PageResource {
 	/**
 	 * Returns the absolute path to our cache directory.
 	 *
-	 * @since 4.0.8     Removed `$path_type` param b/c cache directory might not be located under wp-content.
-	 * @since 3.0.52
+	 * @param string $path_type The desired path type. Accepts 'absolute', 'relative'. Default 'absolute'.
 	 *
 	 * @return string
 	 */
-	public static function get_cache_directory() {
-		return et_core_cache_dir()->path;
+	public static function get_cache_directory( $path_type = 'absolute' ) {
+		if ( 'absolute' === $path_type ) {
+			$cache_dir = self::$WP_CONTENT_DIR . '/cache/et';
+		} else {
+			$cache_dir = 'cache/et';
+		}
+
+		if ( is_multisite() ) {
+			$site       = get_site();
+			$network_id = $site->site_id;
+			$site_id    = $site->blog_id;
+			$cache_dir  = "${cache_dir}/{$network_id}/{$site_id}";
+		}
+
+		return $cache_dir;
 	}
 
 	/**
@@ -781,7 +805,7 @@ class ET_Core_PageResource {
 			return $tag;
 		}
 
-		/** @see ET_Core_SupportCenter::toggle_safe_mode */
+		/** @see ET_Support_Center::toggle_safe_mode */
 		if ( et_core_is_safe_mode_active() ) {
 			return $tag;
 		}
@@ -878,15 +902,13 @@ class ET_Core_PageResource {
 
 		$files = array_merge(
 			(array) glob( "{$cache_dir}/et-{$_owner}-*" ),
-			(array) glob( "{$cache_dir}/{$_post_id}/et-{$_owner}-*" ),
-			(array) glob( "{$cache_dir}/*/et-{$_owner}-*-tb-{$_post_id}-*" ),
-			(array) glob( "{$cache_dir}/*/et-{$_owner}-*-tb-for-{$_post_id}-*" )
+			(array) glob( "{$cache_dir}/{$_post_id}/et-{$_owner}-*" )
 		);
 
 		foreach( (array) $files as $file ) {
 			$file = self::$data_utils->normalize_path( $file );
 
-			if ( ! et_()->starts_with( $file, $cache_dir ) ) {
+			if ( 0 !== strpos( $file, self::$WP_CONTENT_DIR . '/cache/et' ) ) {
 				// File is not located inside cache directory so skip it.
 				continue;
 			}
@@ -900,7 +922,6 @@ class ET_Core_PageResource {
 		self::$data_utils->remove_empty_directories( $cache_dir );
 
 		// Clear cache managed by 3rd-party cache plugins
-		$post_id = ! empty( $post_id ) && absint( $post_id ) > 0 ? $post_id : '';
 		et_core_clear_wp_cache( $post_id );
 
 		// Set our DONOTCACHEPAGE file for the next request.
@@ -919,7 +940,14 @@ class ET_Core_PageResource {
 
 		self::startup();
 
-		return self::$wpfs = et_core_cache_dir()->wpfs;
+		if ( null === self::$wpfs ) {
+			// We aren't able to write to the filesystem so let's just make sure `self::$wpfs`
+			// is an instance of the filesystem base class so that calling it won't cause errors.
+			include_once ABSPATH . 'wp-admin/includes/class-wp-filesystem-base.php';
+			self::$wpfs = new WP_Filesystem_Base();
+		}
+
+		return self::$wpfs;
 	}
 
 	protected function _initialize_resource() {
@@ -931,20 +959,22 @@ class ET_Core_PageResource {
 		}
 
 		$file_extension = 'style' === $this->type ? '.min.css' : '.min.js';
-		$path           = self::get_cache_directory();
-		$url            = et_core_cache_dir()->url;
+		$absolute_path  = self::get_cache_directory();
+		$relative_path  = self::get_cache_directory( 'relative' );
 
-		$files = glob( $path . "/{$this->post_id}/{$this->filename}-[0-9]*{$file_extension}" );
+		$files = glob( $absolute_path . "/{$this->post_id}/{$this->filename}-[0-9]*{$file_extension}" );
 
 		if ( $files ) {
 			// Static resource file exists
 			$file           = array_pop( $files );
 			$this->PATH     = self::$data_utils->normalize_path( $file );
 			$this->BASE_DIR = dirname( $this->PATH );
-			$this->URL      = et_()->path( $url, $this->post_id, basename( $this->PATH ) );
+
+			$start     = strpos( $this->PATH, 'cache/et' );
+			$this->URL = content_url( substr( $this->PATH, $start ) );
 
 			if ( $files ) {
-				// There are multiple files for this resource. Let's delete the extras.
+				// Somehow there are multiple files for this resource. Let's delete the extras.
 				foreach ( $files as $extra_file ) {
 					ET_Core_Logger::debug( 'Removing extra page resource file: ' . $extra_file );
 					@self::$wpfs->delete( $extra_file );
@@ -955,13 +985,13 @@ class ET_Core_PageResource {
 			// Static resource file doesn't exist
 			$time = self::$_request_time;
 
-			$url  .= "/{$this->post_id}/{$this->filename}-{$time}{$file_extension}";
-			$path .= "/{$this->post_id}/{$this->filename}-{$time}{$file_extension}";
+			$relative_path .= "/{$this->post_id}/{$this->filename}-{$time}{$file_extension}";
+			$absolute_path .= "/{$this->post_id}/{$this->filename}-{$time}{$file_extension}";
 
-			$this->BASE_DIR = self::$data_utils->normalize_path( dirname( $path ) );
+			$this->BASE_DIR = self::$data_utils->normalize_path( dirname( $absolute_path ) );
 			$this->TEMP_DIR = $this->BASE_DIR . "/{$this->slug}~";
-			$this->PATH     = $path;
-			$this->URL      = $url;
+			$this->PATH     = $absolute_path;
+			$this->URL      = content_url( $relative_path );
 		}
 
 		$this->_register_resource();
@@ -1047,8 +1077,8 @@ class ET_Core_PageResource {
 
 		$current_location = $this->location;
 
-		self::_unassign_output_location( $current_location, $this );
 		self::_assign_output_location( $location, $this );
+		self::_unassign_output_location( $current_location, $this );
 
 		$this->location = $location;
 	}

@@ -1,0 +1,6 @@
+2020-02-24T02:51:24+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\wp-db.php on line 2030
+
+2020-02-24T03:16:07+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\Requests\Transport\cURL.php on line 163
+
+2020-02-24T04:37:50+00:00 CRITICAL require_once(): Failed opening required 'C:\xampp\htdocs\shop/wp-content/themes/Divi/includes/functions/choices.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 28
+

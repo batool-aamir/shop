@@ -55,7 +55,7 @@
 
 				if ( ! $this.actionsDisabled() ) {
 					$this.disableActions();
-					$this.preImport();
+					$this.import();
 				}
 			} );
 
@@ -69,19 +69,7 @@
 			$el.find( '[data-et-core-portability-cancel]' ).click( function( e ) {
 				e.preventDefault();
 				$this.cancel();
-			} );
-
-			$el.find('[data-et-confirmation-dialog="close"]').click(function(e) {
-				e.preventDefault();
-				$this.enableActions();
-				$this.closeConfirmationDialog();
-			});
-
-			$el.find('[data-et-confirmation-dialog="confirm"]').click(function(e) {
-				e.preventDefault();
-				$this.closeConfirmationDialog();
-				$this.import();
-			});
+			} )
 		},
 
 		validateImportFile: function( file, noOutput ) {
@@ -107,32 +95,21 @@
 			$( '.et-core-portability-import-placeholder' ).text( file.name );
 		},
 
-		preImport: function() {
-			var $this = this;
-			var file = $this.instance('input[type="file"]').get(0).files[0];
+		import: function( noBackup ) {
+			var $this = this,
+				file = $this.instance( 'input[type="file"]' ).get( 0 ).files[0];
 
-			if (undefined === window.FormData) {
-				etCore.modalContent('<p>' + this.text.browserSupport + '</p>', false, 3000, '#et-core-portability-import');
+			if ( undefined === window.FormData ) {
+				etCore.modalContent( '<p>' + this.text.browserSupport + '</p>', false, 3000, '#et-core-portability-import' );
 
 				$this.enableActions();
 
 				return;
 			}
 
-			if (!$this.validateImportFile(file)) {
+			if ( ! $this.validateImportFile( file ) ) {
 				return;
 			}
-
-			if ($this.instance('[name="et-core-portability-import-include-custom-defaults"]' ).is(':checked')) {
-				$this.showConfirmationDialog();
-			} else {
-				$this.import();
-			}
-		},
-
-		import: function( noBackup ) {
-			var $this = this;
-			var file = $this.instance('input[type="file"]').get(0).files[0];
 
 			$this.addProgressBar( $this.text.importing );
 
@@ -147,14 +124,9 @@
 				return;
 			}
 
-			var includeCustomDefaults = $this.instance('[name="et-core-portability-import-include-custom-defaults"]').is(':checked');
-			var applyCustomDefaults   = $this.instance('[name="et-core-portability-import-apply-custom-defaults"]').is(':checked');
-
 			$this.ajaxAction( {
 				action: 'et_core_portability_import',
 				file: file,
-				include_custom_defaults: includeCustomDefaults,
-				apply_custom_defaults: applyCustomDefaults,
 				nonce: $this.nonces.import
 			}, function( response ) {
 				etCore.modalContent( '<div class="et-core-loader et-core-loader-success"></div>', false, 3000, '#et-core-portability-import' );
@@ -281,8 +253,7 @@
 				dataType: 'json',
 				data: {
 					action: 'et_core_portability_export',
-					content: content.shortcode,
-					custom_defaults: content.custom_defaults,
+					content: content,
 					timestamp: timestamp !== undefined ? timestamp : 0,
 					nonce: $this.nonces.export,
 					post: postId,
@@ -353,8 +324,8 @@
 			} );
 		},
 
-		importFB: function(file, postId, options) {
-			var $this      = this;
+		importFB: function( file, postId ) {
+			var $this = this;
 			var errorEvent = document.createEvent( 'Event' );
 
 			window.et_fb_import_progress = 0;
@@ -374,40 +345,23 @@
 				return;
 			}
 
-			if ('undefined' === typeof options) {
-				options = {};
-			}
-
-			options = $.extend({
-				replace: false
-			}, options);
-
 			var fileSize = Math.ceil( ( file.size / ( 1024 * 1024 ) ).toFixed( 2 ) ),
 				formData = new FormData(),
 				requestData = {
 					action: 'et_core_portability_import',
-					include_custom_defaults: options.includeCustomDefaults,
 					file: file,
 					content: false,
 					timestamp: 0,
 					nonce: $this.nonces.import,
 					post: postId,
-					replace: options.replace ? '1' : '0',
 					context: 'et_builder'
 				};
-			
-			/**
-			 * Max size set on server is exceeded.
-			 * 
-			 * 0 indicating "unlimited" according to php specs
-			 * https://www.php.net/manual/en/ini.core.php#ini.post-max-size
-			 **/
-			if (
-				( 0 > $this.postMaxSize && fileSize >= $this.postMaxSize )
-				|| ( 0 > $this.uploadMaxSize && fileSize >= $this.uploadMaxSize )
-			) {
+
+			// Max size set on server is exceeded.
+			if ( fileSize >= $this.postMaxSize || fileSize >= $this.uploadMaxSize ) {
 				window.et_fb_import_layout_message = this.text.maxSizeExceeded;
 				window.dispatchEvent( errorEvent );
+
 				return;
 			}
 
@@ -607,16 +561,8 @@
 				var fileSize = Math.ceil( ( data.file.size / ( 1024 * 1024 ) ).toFixed( 2 ) ),
 					formData = new FormData();
 
-				/**
-				 * Max size set on server is exceeded.
-				 * 
-				 * 0 indicating "unlimited" according to php specs
-				 * https://www.php.net/manual/en/ini.core.php#ini.post-max-size
-				 **/
-				if (
-					( 0 > $this.postMaxSize && fileSize >= $this.postMaxSize )
-					|| ( 0 > $this.uploadMaxSize && fileSize >= $this.uploadMaxSize )
-				) {
+				// Max size set on server is exceeded.
+				if ( fileSize >= $this.postMaxSize || fileSize >= $this.uploadMaxSize ) {
 					etCore.modalContent( '<p>' + $this.text.maxSizeExceeded + '</p>', false, true, '#' + $this.instance( '.ui-tabs-panel:visible' ).attr( 'id' ) );
 
 					$this.enableActions();
@@ -711,30 +657,6 @@
 
 		instance: function( element ) {
 			return $( '.et-core-active[data-et-core-portability]' + ( element ? ' ' + element : '' ) );
-		},
-
-		showConfirmationDialog: function() {
-			var $dialog = $('.et-core-confirmation-dialog-overlay');
-			var $modalOverlay = $dialog.closest('.et-core-modal-overlay');
-
-			$dialog.addClass('et-core-active');
-			$modalOverlay.data('et-core-disable-closing', true);
-
-
-		},
-
-		closeConfirmationDialog: function() {
-			var $dialog = $('.et-core-confirmation-dialog-overlay');
-			var $modalOverlay = $dialog.closest('.et-core-modal-overlay');
-
-			$modalOverlay.data('et-core-disable-closing', false);
-
-			$dialog.addClass('et-core-closing').delay(600).queue(function() {
-				var $overlay = $(this);
-
-				$overlay.removeClass( 'et-core-active et-core-closing' ).dequeue();
-			});
-
 		},
 
 	} );

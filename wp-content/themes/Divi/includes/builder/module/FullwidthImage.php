@@ -54,9 +54,6 @@ class ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
 			'text'                  => false,
 			'button'                => false,
 			'link_options'          => false,
-			'position_fields'       => array(
-				'default' => 'relative',
-			),
 		);
 
 		$this->help_videos = array(
@@ -70,7 +67,7 @@ class ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
 	function get_fields() {
 		$fields = array(
 			'src' => array(
-				'label'              => esc_html__( 'Image', 'et_builder' ),
+				'label'              => esc_html__( 'Image URL', 'et_builder' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'upload_button_text' => esc_attr__( 'Upload an image', 'et_builder' ),
@@ -83,8 +80,6 @@ class ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
 				'description'        => esc_html__( 'Upload your desired image, or type in the URL to the image you would like to display.', 'et_builder' ),
 				'toggle_slug'        => 'main_content',
 				'dynamic_content'    => 'image',
-				'mobile_options'     => true,
-				'hover'              => 'tabs',
 			),
 			'alt' => array(
 				'label'           => esc_html__( 'Image Alternative Text', 'et_builder' ),
@@ -214,7 +209,6 @@ class ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
 	}
 
 	function render( $attrs, $content = null, $render_slug ) {
-		$multi_view          = et_pb_multi_view_options( $this );
 		$src                 = $this->props['src'];
 		$alt                 = $this->props['alt'];
 		$title_text          = $this->props['title_text'];
@@ -268,20 +262,12 @@ class ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
 			);
 		}
 
-		$image_html = $multi_view->render_element( array(
-			'tag'   => 'img',
-			'attrs' => array(
-				'src'   => '{{src}}',
-				'alt'   => '{{alt}}',
-				'title' => '{{title_text}}',
-			),
-			'required' => 'src',
-		) );
-
 		$output = sprintf(
-			'%1$s
-			%2$s',
-			$image_html,
+			'<img src="%1$s" alt="%2$s"%3$s />
+			%4$s',
+			esc_attr( $src ),
+			esc_attr( $alt ),
+			( '' !== $title_text ? sprintf( ' title="%1$s"', esc_attr( $title_text ) ) : '' ),
 			'on' === $is_overlay_applied ? $overlay_output : ''
 		);
 
