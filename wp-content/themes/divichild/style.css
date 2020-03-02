@@ -5,6 +5,10 @@ Template:Divi
 */
 
 
+span.et_overlay {
+    border: none;
+}
+
 .sec2 .et-last-child {
     margin-top: -85px;
     padding: 80px 30px 0px 30px;
@@ -360,7 +364,6 @@ li.et_pb_social_media_follow_network_3.et_pb_social_icon.et_pb_social_network_li
 
 
 
-
 /*
 
 #top-menu li {
@@ -376,9 +379,6 @@ li.et_pb_social_media_follow_network_3.et_pb_social_icon.et_pb_social_network_li
 
 
 
-span.et_overlay {
-    border: none;
-}
 #et-footer-nav {
     background-color: #232f3e;
 }
