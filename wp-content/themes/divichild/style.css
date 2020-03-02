@@ -150,6 +150,8 @@ span.et_shop_image {
     box-shadow: 4px 6px 7px 6px #ccc;
     transform: scale(1.1);}
     
+.single .product:hover{box-shadow: none;
+transform: none;}
 
 .et_overlay:before{content: none;}
 
@@ -243,7 +245,7 @@ div#left-area {
     background: white;
     box-shadow: 0px 0px 20px #cccc;
     border-radius: 30px;
-    margin: 30px 190px;
+    margin: 30px 140px;
 }
 
 .sec4 .et_pb_tabs {
@@ -279,8 +281,36 @@ div.et_pb_section.et_pb_section_4 {
     margin-top: -80px;
 }
 
+/******************************************Newsletter**************************************************/
+  
+form.wpcf7-form {
+    display: flex;
+    justify-content: center;
+}
 
-        /********************************Footer******************************/
+input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email.newsletter {
+    border-radius: 50px;
+    padding: 20px 10px;
+    font-size: 20px;
+    width: 100%;
+    width: 800px;
+}
+
+input.wpcf7-form-control.wpcf7-submit {
+    border-radius: 30px;
+    padding: 15px 50px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    background-image: linear-gradient(97deg,#8c84f9 25%,#a165f4 75%);
+    position: absolute;
+    right: 155px;
+    top: 6px;
+}
+
+      /********************************Footer******************************/
+
+      
 .bottom-nav, .bottom-nav a {
     font-size: 20px;
     text-align: center;
@@ -294,7 +324,7 @@ div.et_pb_section.et_pb_section_4 {
     background: white;
     padding: 5px 5px;
     border-radius: 30px;
-    margin: 10px 140px;
+    margin: 10px 100px;
 }
 
 .et_pb_button_module_wrapper.et_pb_button_1_wrapper.et_pb_button_alignment_right.et_pb_module:before {content: 'Enter your email address..';margin-right: 415px;color: #333333;}
@@ -359,10 +389,105 @@ li.et_pb_social_media_follow_network_3.et_pb_social_icon.et_pb_social_network_li
 }
 
 
+/****************************************Contact Us**************************************************/
+/*.et_pb_section.et_pb_section_1.et_section_regular {
+    margin: 50px 0px;
+}
 
+button.et_pb_contact_submit.et_pb_button,a.woocommerce-button.button.view {
+    background-color: #eee;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 30px;
+    color:black;
+}
 
+button.et_pb_contact_submit.et_pb_button,a.woocommerce-button.button.view:hover {
+    border: none;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px 30px;
+    color: black;
+}
 
+#top-menu a {margin-top: 4px;}
 
+.et_pb_contact p input, .et_pb_contact p textarea, .et_pb_subscribe .et_pb_contact_field input, .et_pb_subscribe .et_pb_contact_field textarea {
+    width: 100%;
+    padding: 16px;
+    -moz-border-radius: 0;
+    border-radius: 10px;
+    color: #999;
+    background-color: #eee;
+    font-size: 14px;
+    -webkit-appearance: none;
+}
+*/
+.et_pb_gutters3 .et_pb_column_1_2, .et_pb_gutters3.et_pb_row .et_pb_column_1_2 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px 0px;
+}
+.contact-form input.wpcf7-form-control.wpcf7-submit {
+    border-radius: 30px;
+    padding: 15px 50px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    background-image: linear-gradient(97deg,#8c84f9 25%,#a165f4 75%);
+    position: inherit;
+}
+
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+    margin: 15px 0px;
+    padding: 10px 10px;
+    border: 5px solid lightsteelblue;
+}
+
+input.text, input.title, input[type=text], select, textarea{
+    margin: 15px 0px;
+    padding: 10px 10px;
+    border: 5px solid lightsteelblue;
+
+}
+/*******************************************My Account********************************************/
+nav.woocommerce-MyAccount-navigation ul li a {color: white;font-size: 25px;font-weight: bold;}
+nav.woocommerce-MyAccount-navigation ul li a:hover {color: black;font-size: 25px;}
+
+nav.woocommerce-MyAccount-navigation ul li {
+    margin: 10px 0px;
+}
+
+nav.woocommerce-MyAccount-navigation ul li a {color: white;font-size: 25px;}
+
+nav.woocommerce-MyAccount-navigation ul li {
+    margin: 10px 0px;
+}
+
+.woocommerce-notices-wrapper p {
+    color: white;
+}
+
+.woocommerce-MyAccount-content {
+    color: white;
+}
+
+.woocommerce-MyAccount-content a {
+    color: white;
+}
+
+.woocommerce table.my_account_orders td, .woocommerce table.my_account_orders th {
+    padding: 4px 8px;
+    vertical-align: middle;
+    border: 1px solid black;
+}
+a.woocommerce-Button.button {background: white;border-radius: 30px;}
+.woocommerce-info a {
+    color: black !important;
+
+}
 
 /*
 

@@ -1,0 +1,18 @@
+2020-03-02T09:58:53+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-content\themes\Divi\includes\builder\functions.php on line 9917
+
+2020-03-02T09:58:54+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-content\themes\Divi\includes\builder\class-et-builder-element.php on line 3
+
+2020-03-02T09:59:25+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\http.php on line 551
+
+2020-03-02T10:01:00+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\class-wp-theme.php on line 1194
+
+2020-03-02T10:01:10+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\wp-db.php on line 2030
+
+2020-03-02T10:02:21+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-content\themes\Divi\includes\builder\functions.php on line 3
+
+2020-03-02T10:11:03+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\Requests\Transport\cURL.php on line 163
+
+2020-03-02T10:51:45+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\Requests\Transport\cURL.php on line 163
+
+2020-03-02T10:58:06+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\Requests\Transport\cURL.php on line 163
+
