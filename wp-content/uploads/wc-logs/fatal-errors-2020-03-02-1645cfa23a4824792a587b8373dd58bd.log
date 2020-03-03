@@ -16,3 +16,14 @@
 
 2020-03-02T10:58:06+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\shop\wp-includes\Requests\Transport\cURL.php on line 163
 
+2020-03-02T18:22:29+00:00 CRITICAL Uncaught TypeError: Argument 2 passed to WPSEO_Link_Watcher::save_post() must be an instance of WP_Post, null given, called in C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php on line 290 and defined in C:\xampp\htdocs\shop\wp-content\plugins\wordpress-seo\admin\links\class-link-watcher.php:47
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(290): WPSEO_Link_Watcher->save_post(581, NULL)
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\post.php(4120): do_action('save_post', 581, NULL, true)
+#4 C:\xampp\htdocs\shop\wp-includes\post.php(4197): wp_insert_post(Array, false)
+#5 C:\xampp\htdocs\shop\wp-admin\includes\post.php(1838): wp_update_post(Array)
+#6 C:\xampp\htdocs\shop\wp-content\themes\Divi\includes\builder\core.php(1823): wp_create_post_autosave(Array)
+#7 C:\xampp\htdocs\shop\wp-content\themes\Divi\includes\builder\core.php(1 in C:\xampp\htdocs\shop\wp-content\plugins\wordpress-seo\admin\links\class-link-watcher.php on line 47
+

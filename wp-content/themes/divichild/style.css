@@ -130,8 +130,8 @@ a.et-cart-info {
 }
 
 .woocommerce ul.products li.product a img {
-    width: 250px;
-    height: 250px;
+    width:200px;
+    height: 200px;
     display: block;
     box-shadow: none;
 
@@ -245,7 +245,7 @@ div#left-area {
     background: white;
     box-shadow: 0px 0px 20px #cccc;
     border-radius: 30px;
-    margin: 30px 140px;
+    margin: 30px 45px;
 }
 
 .sec4 .et_pb_tabs {
@@ -282,7 +282,16 @@ div.et_pb_section.et_pb_section_4 {
 }
 
 /******************************************Newsletter**************************************************/
-  
+
+
+.newsletter .wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+    position: absolute;
+    top: 55px;
+    border: 2px solid black;
+    color: white;
+    background: limegreen;
+}
+
 form.wpcf7-form {
     display: flex;
     justify-content: center;
@@ -306,6 +315,7 @@ input.wpcf7-form-control.wpcf7-submit {
     position: absolute;
     right: 155px;
     top: 6px;
+    cursor: pointer;
 }
 
       /********************************Footer******************************/
@@ -390,40 +400,15 @@ li.et_pb_social_media_follow_network_3.et_pb_social_icon.et_pb_social_network_li
 
 
 /****************************************Contact Us**************************************************/
-/*.et_pb_section.et_pb_section_1.et_section_regular {
-    margin: 50px 0px;
-}
 
-button.et_pb_contact_submit.et_pb_button,a.woocommerce-button.button.view {
-    background-color: #eee;
-    border: none;
-    border-radius: 10px;
-    padding: 5px 30px;
-    color:black;
-}
-
-button.et_pb_contact_submit.et_pb_button,a.woocommerce-button.button.view:hover {
-    border: none;
-    background-color: #eee;
-    border-radius: 10px;
-    padding: 10px 30px;
-    color: black;
+.contact-us .wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+    border: 2px solid black;
+    color: white;
+    background: limegreen;
 }
 
 #top-menu a {margin-top: 4px;}
-
-.et_pb_contact p input, .et_pb_contact p textarea, .et_pb_subscribe .et_pb_contact_field input, .et_pb_subscribe .et_pb_contact_field textarea {
-    width: 100%;
-    padding: 16px;
-    -moz-border-radius: 0;
-    border-radius: 10px;
-    color: #999;
-    background-color: #eee;
-    font-size: 14px;
-    -webkit-appearance: none;
-}
-*/
-.et_pb_gutters3 .et_pb_column_1_2, .et_pb_gutters3.et_pb_row .et_pb_column_1_2 {
+.contact-us .et_pb_column_1_2, .et_pb_gutters3.et_pb_row .et_pb_column_1_2 {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -440,13 +425,13 @@ button.et_pb_contact_submit.et_pb_button,a.woocommerce-button.button.view:hover 
     position: inherit;
 }
 
-input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+.contact-form input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
     margin: 15px 0px;
     padding: 10px 10px;
     border: 5px solid lightsteelblue;
 }
 
-input.text, input.title, input[type=text], select, textarea{
+.contact-form input.text, input.title, input[type=text], select, textarea{
     margin: 15px 0px;
     padding: 10px 10px;
     border: 5px solid lightsteelblue;
@@ -489,54 +474,35 @@ a.woocommerce-Button.button {background: white;border-radius: 30px;}
 
 }
 
-/*
+/**********************************************FAQs*************************************/
 
-#top-menu li {
-    display: inline-block;
-    padding-right: 22px;
+.accordion h2.et_pb_toggle_title {
     font-size: 20px;
+    font-weight: bold;
 }
 
-.et_header_style_left #et-top-navigation nav>ul>li>a, .et_header_style_split #et-top-navigation nav>ul>li>a {
-    padding-bottom: 33px;
-    color: #232f3e;
+.et_pb_toggle.et_pb_module.et_pb_accordion_item.et_pb_toggle_close {
+    border: 5px solid #a165f4;
 }
 
-
-
-#et-footer-nav {
-    background-color: #232f3e;
+.et_pb_toggle_content {
+    font-size: 18px;
 }
 
-#footer-bottom {
-    padding: 15px 0 5px;
-    background-color: #232f3e;
+.product-categories li.product-category:hover{
+    box-shadow: none;
+    transform:none;}
+
+mark.count {
+background: none;
+display: none;
 }
 
-.et-db #et-boc .et-l .et_overlay:before, .et_overlay:before
-{
-content: "\e07a";
-text-shadow: 0 0;
-    font-family: ETmodules!important;
-    font-weight: 400;
-    color:#232f3e;
-    font-style: normal;
-    font-variant: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    line-height: 1;
-    text-transform: none;
+.collection .et_pb_row.et_pb_row_1 {
+margin: 50px auto;
 }
 
-/*.main-banner::before {
-    content: '';
-    position: absolute;
-    z-index: 3;
-    background-image:url(./images/sec1banner_01.png);
-    background-repeat: no-repeat;
-   clip-path: polygon(0 0, 100% 1%, 100% 100%, 0 29%);
-    height:100%;
-    width: 100%;
-    
-}*/
-
+h2.woocommerce-loop-category__title {
+    color: blueviolet;
+    font-weight: 700;
+}
