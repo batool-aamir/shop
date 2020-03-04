@@ -4,6 +4,16 @@ Text Domain: divichild
 Template:Divi
 */
 
+body #page-container .et_pb_button_0:after {
+    color: #7048e2;
+    line-height: inherit;
+    font-size: 20px;
+    opacity: 1;
+    margin-left: .3em;
+    left: auto;
+    font-weight: bold;
+}
+
 input.et-search-field {
     background: white;
     padding: 15px 26px;
@@ -23,7 +33,7 @@ span.et_overlay {
     margin-top: -85px;
     padding: 80px 30px 0px 30px;
     background: white;
-    box-shadow: 0px 0px 20px #cccc;
+    box-shadow: 0px 20px 40px -10px rgba(0,0,0,0.2);
 }
 
 
@@ -145,7 +155,30 @@ a.et-cart-info {
 
 }
 
-.woocommerce span.onsale, .woocommerce-page span.onsale{    background: #b8a3fa!important;}
+.woocommerce p.stars a {
+    position: relative;
+    height: 1em;
+    width: 1em;
+    text-indent: -999em;
+    display: inline-block;
+    text-decoration: none;
+    color: #a165f4;
+}
+body.woocommerce .woocommerce-tabs {
+    margin: 30px 0 45px;
+    border: 3px solid #a165f4;
+}
+
+#commentform input[type=email], #commentform input[type=text], #commentform input[type=url], #commentform textarea {
+    padding: 12px;
+    border-width: 0;
+    color: white;
+    background-color: #8c84f9;
+    font-size: 18px;
+    line-height: 1em;
+}
+
+.woocommerce span.onsale, .woocommerce-page span.onsale{  background: #b8a3fa!important;}
 ul.products li.product {
     min-height: 370px;
 }
@@ -155,8 +188,9 @@ span.et_shop_image {
 }
 .product:hover {
     border: 0px solid;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-    transform: scale(1.1);}
+    box-shadow: 0px 20px 40px -10px rgba(0,0,0,0.2);
+    transform: scale(1.1);
+    z-index: 3;}
     
 .single .product:hover{box-shadow: none;
 transform: none;}
@@ -181,12 +215,6 @@ transform: none;}
     text-align: center;
 }
 .sec1bg .et_pb_text_inner>p{font-size: 40px;}
-.sec1bg .et_pb_text_inner>p:after {
-    content: 'OFF';
-    color: white;
-    font-size: 40px;
-    padding-top: 15px;
-}
 .et_pb_gutters3 .et_pb_column_1_2 .et_pb_module, .et_pb_gutters3.et_pb_row .et_pb_column_1_2 .et_pb_module {
     margin-bottom:0px;
 }
@@ -285,6 +313,17 @@ div#left-area {
 
 
 /******************************************Newsletter**************************************************/
+
+        
+.sec5 .et_pb_text_inner h4 {
+    margin: 65px 0px;
+}
+
+.sec5 .et_pb_text_inner h4 {
+    position: relative;
+    top: 40px;
+}
+
 div.et_pb_section.et_pb_section_4 {
     margin-top: -80px;
 }
@@ -330,6 +369,7 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf
     font-size: 20px;
     width: 800px;
     margin-left: 180px;
+    margin-top: 30px;
 }
 
 .newsletter input.wpcf7-form-control.wpcf7-submit {
@@ -341,9 +381,10 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf
     background-image: linear-gradient(97deg,#8c84f9 25%,#a165f4 75%);
    position: relative;
    right: 174px;
-    top: 6px;
+    top: 36px;
     cursor: pointer;
 }
+
 
       /********************************Footer******************************/
 
@@ -353,10 +394,7 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf
     text-align: center;
 }
 
-        
-.sec5 .et_pb_text_inner h4 {
-    margin: 50px 0px;
-}
+
 .et_pb_button_module_wrapper.et_pb_button_1_wrapper.et_pb_button_alignment_right.et_pb_module {
     background: white;
     padding: 5px 5px;
@@ -839,4 +877,9 @@ ul.wc_payment_methods.payment_methods.methods {
     padding: 6px 12px;
     height: 270px;
 }
+
+
+
+
+
 
