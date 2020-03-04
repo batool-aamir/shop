@@ -201,7 +201,7 @@ transform: none;}
     content: 'Add To Cart';
     position: relative;
     top: 144%;
-    left: 22%;
+    left: 21%;
     background-image: linear-gradient(90deg,#8c84f9,#a165f4);
     color: white;
     font-size: 20px;
@@ -792,12 +792,39 @@ button.button:hover {
     background-image: linear-gradient(97deg,#8c84f9 25%,#a165f4 75%)!important;
     cursor: pointer;
 }
+.woocommerce .woocommerce-ordering select {
+    vertical-align: top;
+    background: lightsteelblue;
+    padding: 15px;
+    font-size: 15px;
+    color: black !important;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 
+h1.woocommerce-products-header__title.page-title {
+    color: #a165f4;
+}
+
+li.product.product-type-simple:hover{
+    box-shadow: 0px 20px 40px -10px rgba(0,0,0,0.2);
+    transform: scale(1.1);
+}
+/*
+.et_pb_fullwidth_portfolio .et_pb_portfolio_image:hover .et_overlay, .et_pb_fullwidth_portfolio .et_pb_portfolio_image:hover .meta, .et_pb_gallery_image:hover .et_overlay, .et_pb_has_overlay:not(.et_pb_image):hover .et_overlay, .et_pb_image.et_pb_has_overlay .et_pb_image_wrap:hover .et_overlay, .et_portfolio_image:hover .et_overlay, .et_shop_image:hover .et_overlay{    z-index: 0;
+    opacity: 0;
+    
+}
+.et_pb_portfolio_image:hover span.et_shop_image{
+    z-index: 0;
+    opacity: 0;
+    
+}
 /***************************************************checkout*********************************/
 
 .checkout .woocommerce {
-    margin:115px 0px;
+    margin-bottom:50px;
     color: white;
 }
 
@@ -809,7 +836,7 @@ button.button:hover {
 .checkout .woocommerce-notices-wrapper {
     margin-bottom: -50px;
 }
-.checkout .woocommerce-notices-wrapper {
+.et_pb_module.et_pb_text.et_pb_text_1.checkout.et_pb_bg_layout_light.et_pb_text_align_left .woocommerce-notices-wrapper {
     padding: 35px;
     background: red;
 }
