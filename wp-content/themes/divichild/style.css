@@ -352,7 +352,7 @@ div.et_pb_section.et_pb_section_4 {
 
 .newsletter .wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
     position: absolute;
-    top: 55px;
+    top: 80px;
     border: 2px solid black;
     color: white;
     background: limegreen;
@@ -384,7 +384,6 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf
     top: 36px;
     cursor: pointer;
 }
-
 
       /********************************Footer******************************/
 
