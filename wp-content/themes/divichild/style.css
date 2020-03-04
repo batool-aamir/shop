@@ -4,6 +4,13 @@ Text Domain: divichild
 Template:Divi
 */
 
+input.et-search-field {
+    background: white;
+    padding: 15px 26px;
+    margin: 32px -8px;
+    border: 2px solid #dfdfdf;
+} 
+
 ul.products.columns-3 {
     margin: 10px 60px;
 
@@ -53,10 +60,17 @@ span.et_overlay {
     padding-left: 50px;
 }
 
+span#et_search_icon::before {
+    padding-left: 5px;
+}
+
+span#et_search_icon {
+    border-right: 2px solid #dfdfdf;
+}
 
 #et_search_icon::after {
     content: 'Search';
-    padding: 10px 30px;
+    padding: 10px 28px;
     color: #151515;
     font-size: 18px;
     font-weight: 600;
@@ -65,6 +79,7 @@ span.et_overlay {
 div#et-top-navigation {
     display: flex;
     flex-direction: row-reverse;
+    width: 23%;
 }
 #et-secondary-nav .menu-item-has-children>a:first-child, #top-menu .menu-item-has-children>a:first-child {
     padding-right: 20px;
@@ -227,6 +242,7 @@ div#left-area {
 
 
             /***********************our showcasae css********************************/
+
 .sec4 .et_pb_tabs_0 {
     box-shadow: none
 }
@@ -260,26 +276,19 @@ div#left-area {
     border-radius: 30px;
 }
 .sec4 .et_pb_tabs_0.et_pb_tabs .et_pb_tabs_controls li a {
-    color: #333333!important;
+    color: #333333;
     font-size: 15px;
-    padding: 0px 27px;
+    padding: 8px 27px;
 }
 
-.sec4 .et_pb_tabs_0.et_pb_tabs .et_pb_tabs_controls li a:active{
-    color: #b394fa !important;
-} 
+.sec4 .et_pb_tabs_0.et_pb_tabs .et_pb_tabs_controls .et_pb_tab_active a{color: #b394fa !important;}
 
 
-.sec4 .et_pb_tabs_0.et_pb_tabs .et_pb_tabs_controls li a:hover{
-    color: #b394fa !important;
-} 
-
+/******************************************Newsletter**************************************************/
 div.et_pb_section.et_pb_section_4 {
-    background-image: linear-gradient(97deg,#8c84f9 25%,#a165f4 75%)!important;
     margin-top: -80px;
 }
 
-/******************************************Newsletter**************************************************/
 .newsletter div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
     position: absolute;
     top: 85px;
