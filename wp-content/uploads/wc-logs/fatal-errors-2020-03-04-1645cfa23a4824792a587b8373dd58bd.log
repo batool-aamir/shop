@@ -1,0 +1,1752 @@
+2020-03-04T04:34:01+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:34:28+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:34:55+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:00+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:01+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:01+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:01+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:27+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:30+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:30+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:30+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:31+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:35:31+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:36:03+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:36:16+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:36:25+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:36:26+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:36:26+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:36:26+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:38:37+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:38:54+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:39:01+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:39:01+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:40:09+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:40:18+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:40:18+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:40:18+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:40:18+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:40:27+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:41:11+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:41:21+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:42:25+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:44:03+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:44:08+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:45:20+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:45:54+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:46:33+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:46:50+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:46:57+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:46:57+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:46:58+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:47:49+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:47:54+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:47:55+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:48:22+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:49:24+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:49:42+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:49:58+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:49:59+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:49:59+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:50:21+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:50:21+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:50:39+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:50:58+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:51:45+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:53:02+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:53:59+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:09+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:11+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:11+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:11+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:11+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:11+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:11+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:26+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:54:34+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:57:04+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:57:19+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:57:25+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:57:38+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:57:47+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:58:48+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
+2020-03-04T04:59:58+00:00 CRITICAL Uncaught WC_Stripe_Exception: WP_Error Object
+(
+    [errors] => Array
+        (
+            [http_request_failed] => Array
+                (
+                    [0] => A valid URL was not provided.
+                )
+
+        )
+
+    [error_data] => Array
+        (
+        )
+
+)
+ in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php:140
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-customer.php(329): WC_Stripe_API::request(Array, 'customers/cus_G...', 'GET')
+#1 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-payment-tokens.php(103): WC_Stripe_Customer->get_sources()
+#2 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): WC_Stripe_Payment_Tokens->woocommerce_get_customer_payment_tokens(Array, 1, 'stripe')
+#3 C:\xampp\htdocs\shop\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#4 C:\xampp\htdocs\shop\wp-content\plugins\woocommerce\includes in C:\xampp\htdocs\shop\wp-content\plugins\woocommerce-gateway-stripe\includes\class-wc-stripe-api.php on line 140
+
