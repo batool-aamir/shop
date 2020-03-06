@@ -1063,3 +1063,7 @@ td.woocommerce-orders-table__cell.woocommerce-orders-table__cell-order-actions .
     background-image: linear-gradient(97deg,#8c84f9 25%,#a165f4 75%) !important;
     cursor: pointer;
 }
+
+.woocommerce-order-received .et_pb_button_module_wrapper.et_pb_button_0_wrapper.et_pb_button_alignment_center.et_pb_module {
+    display: none;
+}
