@@ -1,0 +1,104 @@
+2020-03-06T18:14:27+00:00 CRITICAL Uncaught Error: Call to undefined function et_load_unminified_scripts() in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php:212
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): et_divi_load_scripts_styles('')
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\script-loader.php(2670): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\shop\wp-includes\general-template.php(2879): do_action('wp_head')
+#8 C:\xampp\htdocs\shop\wp-content\plugins\all-in-one-wp-security-and-firewall\other-includes\wp-security-unlock-request.php(10): wp_head()
+#9 C:\xampp\htdocs\shop\wp-cont in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 212
+
+2020-03-06T18:20:03+00:00 CRITICAL Uncaught Error: Call to undefined function et_load_unminified_scripts() in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php:212
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): et_divi_load_scripts_styles('')
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\script-loader.php(2670): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\shop\wp-includes\general-template.php(2879): do_action('wp_head')
+#8 C:\xampp\htdocs\shop\wp-content\plugins\all-in-one-wp-security-and-firewall\other-includes\wp-security-unlock-request.php(10): wp_head()
+#9 C:\xampp\htdocs\shop\wp-cont in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 212
+
+2020-03-06T18:30:54+00:00 CRITICAL Uncaught Error: Call to undefined function et_load_unminified_scripts() in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php:212
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): et_divi_load_scripts_styles('')
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\script-loader.php(2670): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\shop\wp-includes\general-template.php(2879): do_action('wp_head')
+#8 C:\xampp\htdocs\shop\wp-content\plugins\all-in-one-wp-security-and-firewall\other-includes\wp-security-unlock-request.php(10): wp_head()
+#9 C:\xampp\htdocs\shop\wp-cont in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 212
+
+2020-03-06T18:33:53+00:00 CRITICAL Uncaught Error: Call to undefined function et_load_unminified_scripts() in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php:212
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): et_divi_load_scripts_styles('')
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\script-loader.php(2670): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\shop\wp-includes\general-template.php(2879): do_action('wp_head')
+#8 C:\xampp\htdocs\shop\wp-content\plugins\all-in-one-wp-security-and-firewall\other-includes\wp-security-unlock-request.php(10): wp_head()
+#9 C:\xampp\htdocs\shop\wp-cont in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 212
+
+2020-03-06T18:34:19+00:00 CRITICAL Uncaught Error: Call to undefined function et_load_unminified_styles() in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php:213
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): et_divi_load_scripts_styles('')
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\script-loader.php(2670): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\shop\wp-includes\general-template.php(2879): do_action('wp_head')
+#8 C:\xampp\htdocs\shop\wp-content\plugins\all-in-one-wp-security-and-firewall\other-includes\wp-security-unlock-request.php(10): wp_head()
+#9 C:\xampp\htdocs\shop\wp-conte in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 213
+
+2020-03-06T18:34:42+00:00 CRITICAL Uncaught Error: Call to undefined function et_builder_post_is_of_custom_post_type() in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php:302
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): et_divi_replace_stylesheet('')
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\script-loader.php(2670): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\shop\wp-includes\general-template.php(2879): do_action('wp_head')
+#8 C:\xampp\htdocs\shop\wp-content\plugins\all-in-one-wp-security-and-firewall\other-includes\wp-security-unlock-request.php(10): wp_head()
+#9 C:\xampp\htdocs\s in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 302
+
+2020-03-06T18:35:06+00:00 CRITICAL Uncaught Error: Call to undefined function et_load_unminified_scripts() in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php:212
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): et_divi_load_scripts_styles('')
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\script-loader.php(2670): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\shop\wp-includes\general-template.php(2879): do_action('wp_head')
+#8 C:\xampp\htdocs\shop\wp-content\plugins\all-in-one-wp-security-and-firewall\other-includes\wp-security-unlock-request.php(10): wp_head()
+#9 C:\xampp\htdocs\shop\wp-cont in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 212
+
+2020-03-06T18:41:01+00:00 CRITICAL Uncaught Error: Call to undefined function et_load_unminified_scripts() in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php:212
+Stack trace:
+#0 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): et_divi_load_scripts_styles('')
+#1 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\shop\wp-includes\script-loader.php(2670): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(288): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\shop\wp-includes\class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\shop\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\shop\wp-includes\general-template.php(2879): do_action('wp_head')
+#8 C:\xampp\htdocs\shop\wp-content\plugins\all-in-one-wp-security-and-firewall\other-includes\wp-security-unlock-request.php(10): wp_head()
+#9 C:\xampp\htdocs\shop\wp-cont in C:\xampp\htdocs\shop\wp-content\themes\Divi\functions.php on line 212
+
